@@ -7,15 +7,15 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-full w-full overflow-hidden py-8 lg:h-screen"
+      className="relative h-full w-full  py-8 lg:h-screen"
     >
-      <div className="flex h-full w-full flex-1 flex-col gap-8 px-8 lg:flex-row">
+      <div className="flex h-full w-full flex-1 flex-col gap-8 lg:px-8 px-[1rem] lg:flex-row">
         {/**left side div . this hold the image slider */}
         <div className="relative flex h-full w-full items-center justify-center py-2">
           <Image
             width={688}
             height={500}
-            className="relative z-10 w-[56%]"
+            className="relative z-10 lg:w-[56%] w-[60%]"
             alt="Designer portrait"
             src="/hero-image.png"
             data-ai-hint="designer portrait"
@@ -42,15 +42,15 @@ export function Hero() {
                 way we know how to work.
               </h2>
               <div className="inline-flex items-center gap-4">
-                <Button asChild className="h-auto bg-[#29261f] px-4 py-1.5 hover:bg-[#29261f]/90 rounded-none">
-                  <a href="#" className="text-white">
-                    VIEW WORKS
-                  </a>
-                </Button>
+              <Button asChild className="h-auto bg-[#29261f] text-[0.650rem] hover:bg-[#29261f]/90 px-5 py-2 rounded-none">
+        <Link href="#contact" className="tracking-wide text-[#f7f7f7]">
+          VIEW WORKS
+        </Link>
+      </Button>
                 <Button
                   asChild
                   variant="outline"
-                  className="h-auto border-[#29261f] bg-transparent px-4 py-1.5 hover:bg-[#29261f]/10 rounded-none"
+                  className="h-auto border-[#29261f] bg-transparent px-5 py-2  hover:bg-[#29261f]/10 rounded-none"
                 >
                   <a href="#" className="text-[#29261f]">
                     CONTACT
