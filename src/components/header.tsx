@@ -53,7 +53,7 @@ export function Header() {
                 initial={{ x: '100%', opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: '100%', opacity: 0 }}
-                transition={{ duration: 0.5, ease: 'easeInOut' }}
+                transition={{ duration: 1.9, ease: 'easeInOut' }}
                 className="flex items-center gap-3.5"
             >
               <p className="w-44 text-[12px] text-right text-black/50 font-body line leading-tight">
@@ -66,7 +66,7 @@ export function Header() {
    
       </div>
 
-      <motion.div layout transition={{ duration: 0.5, ease: 'easeInOut' }}>
+      <motion.div layout transition={{ duration: 0.9, ease: 'easeInOut' }}>
         <Link href="/" aria-label="Home">
           <Image
             width={40}
