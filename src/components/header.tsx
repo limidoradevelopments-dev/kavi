@@ -47,53 +47,40 @@ export function Header() {
       </div>
 
       {/* --- ANIMATION & LOGO (Center) --- */}
-      <div className="hidden lg:flex justify-center w-full items-center relative">
-        <div className="flex items-center justify-center gap-3.5 self-stretch overflow-hidden">
+      <div className="hidden lg:flex justify-center w-full items-center relative h-16">
+        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 flex items-center gap-3.5">
           <AnimatePresence>
             {!isScrolled && (
               <motion.div
-                initial={{ x: '100%', opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: '100%', opacity: 0 }}
-                transition={{ duration: 1.9, ease: 'easeInOut' }}
-                className="flex items-center gap-3.5"
+                initial={{ opacity: 0, width: 0 }}
+                animate={{ opacity: 1, width: 'auto' }}
+                exit={{ opacity: 0, width: 0 }}
+                transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+                className="flex items-center gap-3.5 overflow-hidden"
               >
-                <p className="w-44 text-[12px] text-right text-black/50 font-body line leading-tight">
+                <p className="w-44 text-[12px] text-right text-black/50 font-body line leading-tight whitespace-nowrap">
                   The way to make every pixel perfect with your ideas
                 </p>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
-          <AnimatePresence>
-            {!isScrolled && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 1.9, ease: 'easeInOut' }}
-              >
                 <div className="w-px h-16 bg-foreground/10"></div>
               </motion.div>
             )}
           </AnimatePresence>
-        </div>
 
-        <motion.div
-          layout
-          transition={{ duration: 1.4, ease: [0.6, 0.05, 0.01, 0.9] }}
-          className=""
-        >
-          <Link href="/" aria-label="Home">
-            <Image
-              width={40}
-              height={40}
-              className="w-16 h-16"
-              alt="Logo"
-              src="/logo.png"
-            />
-          </Link>
-        </motion.div>
+          <motion.div
+            layout
+            transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+          >
+            <Link href="/" aria-label="Home">
+              <Image
+                width={40}
+                height={40}
+                className="w-16 h-16"
+                alt="Logo"
+                src="/logo.png"
+              />
+            </Link>
+          </motion.div>
+        </div>
       </div>
 
       {/* --- HAMBURGER MENU (Right) --- */}
