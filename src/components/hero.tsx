@@ -37,7 +37,7 @@ export function Hero() {
               UI/UX DESIGNER
             </h1>
             <div className="flex max-w-full flex-col items-start gap-7 md:max-w-[80%]">
-              <h2 className="self-stretch font-headline text-mobile-h2 md:text-h3 leading-tight text-foreground">
+              <h2 className="self-stretch font-headline text-mobile-h3 md:text-h3 leading-tight text-foreground">
                 Doing right by those who trust us isn't a strategy — it's the only
                 way we know how to work.
               </h2>
