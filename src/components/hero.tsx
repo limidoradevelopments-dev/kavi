@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative h-full w-full  py-8 lg:h-screen"
+      className="relative h-full w-full  py-8 lg:h-screen pt-[5rem]"
     >
       <div className="flex h-full w-full flex-1 flex-col gap-8 lg:px-8 px-[1rem] lg:flex-row">
         {/**left side div . this hold the image slider */}
