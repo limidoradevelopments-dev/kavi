@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { ThemeProvider } from '@/components/providers/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
+import { SmoothScroll } from '@/components/smooth-scroll';
 
 export const metadata: Metadata = {
   title: 'FolioFlow',
@@ -25,7 +26,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased">
         <ThemeProvider storageKey="folioflow-theme">
-          {children}
+          <SmoothScroll>{children}</SmoothScroll>
           <Toaster />
         </ThemeProvider>
       </body>
