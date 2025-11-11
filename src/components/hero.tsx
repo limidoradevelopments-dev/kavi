@@ -42,7 +42,7 @@ export function Hero() {
                 way we know how to work.
               </h2>
               <div className="inline-flex items-center gap-4">
-                <Button asChild className="h-auto bg-[#29261f] px-7 py-2 hover:bg-[#29261f]/90 rounded-none">
+                <Button asChild className="h-auto bg-[#29261f] px-4 py-1.5 md:px-7 md:py-2 hover:bg-[#29261f]/90 rounded-none">
                   <a href="#" className="text-white">
                     VIEW WORKS
                   </a>
@@ -50,7 +50,7 @@ export function Hero() {
                 <Button
                   asChild
                   variant="outline"
-                  className="h-auto border-[#29261f] bg-transparent px-7 py-2 hover:bg-[#29261f]/10 rounded-none"
+                  className="h-auto border-[#29261f] bg-transparent px-4 py-1.5 md:px-7 md:py-2 hover:bg-[#29261f]/10 rounded-none"
                 >
                   <a href="#" className="text-[#29261f]">
                     CONTACT
