@@ -1,11 +1,10 @@
 import React from 'react';
-import { AiAboutGenerator } from './ai-about-generator';
 
 export function About() {
   return (
     <section id="about" className="w-full py-20 lg:py-32">
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-1">
           <div className="space-y-4">
             <h2 className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
               About Me
@@ -24,7 +23,6 @@ export function About() {
               projects.
             </p>
           </div>
-          <AiAboutGenerator />
         </div>
       </div>
     </section>
