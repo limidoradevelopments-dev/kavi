@@ -32,17 +32,17 @@ export function Hero() {
 
         {/** right side div . this hold the content for hero section */}
         <div className="relative h-full w-full">
-          <div className="flex flex-col gap-32">
-            <h1 className="font-headline text-h1 max-w-[20%] leading-tight text-[#f7f7f7]">
+          <div className="flex flex-col gap-8 md:gap-32">
+            <h1 className="font-headline text-mobile-h1 md:text-h1 max-w-[20%] leading-tight text-[#f7f7f7]">
               UI/UX DESIGNER
             </h1>
-            <div className="flex max-w-[80%] flex-col items-start gap-7">
-              <h2 className="self-stretch font-headline text-h2 leading-tight text-foreground">
+            <div className="flex max-w-full flex-col items-start gap-7 md:max-w-[80%]">
+              <h2 className="self-stretch font-headline text-mobile-h2 md:text-h3 leading-tight text-foreground">
                 Doing right by those who trust us isn't a strategy — it's the only
                 way we know how to work.
               </h2>
               <div className="inline-flex items-center gap-4">
-                <Button asChild className="h-auto bg-[#29261f] px-7 py-2 hover:bg-[#29261f]/90">
+                <Button asChild className="h-auto bg-[#29261f] px-7 py-2 hover:bg-[#29261f]/90 rounded-none">
                   <a href="#" className="text-white">
                     VIEW WORKS
                   </a>
@@ -50,7 +50,7 @@ export function Hero() {
                 <Button
                   asChild
                   variant="outline"
-                  className="h-auto border-[#29261f] bg-transparent px-7 py-2 hover:bg-[#29261f]/10"
+                  className="h-auto border-[#29261f] bg-transparent px-7 py-2 hover:bg-[#29261f]/10 rounded-none"
                 >
                   <a href="#" className="text-[#29261f]">
                     CONTACT

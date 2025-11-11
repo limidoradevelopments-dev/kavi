@@ -16,6 +16,11 @@ export default {
         'h4': '1.55rem',
         'body': '1rem',
         'button': '0.650rem',
+        'mobile-h1': '2.350rem',
+        'mobile-h2': '1.550rem',
+        'mobile-h3': '1.250rem',
+        'mobile-h4': '1rem',
+        'mobile-body': '0.800rem',
       },
       fontFamily: {
         body: ['Arial', 'sans-serif'],
