@@ -62,7 +62,18 @@ export function Header() {
             </motion.div>
           )}
         </AnimatePresence>
-         <div className="w-px h-16 bg-foreground/10"></div>
+         <AnimatePresence>
+            {!isScrolled && (
+                <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 1.9, ease: 'easeInOut' }}
+                >
+                <div className="w-px h-16 bg-foreground/10"></div>
+                </motion.div>
+            )}
+        </AnimatePresence>
    
       </div>
 
