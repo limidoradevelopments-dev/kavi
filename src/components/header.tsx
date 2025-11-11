@@ -47,7 +47,7 @@ export function Header() {
       </div>
 
       {/* --- ANIMATION & LOGO (Center) --- */}
-      <div className="hidden md:flex justify-center items-center h-16 relative">
+      <div className="hidden lg:flex justify-center w-full items-center relative">
         <div className="flex items-center justify-center gap-3.5 self-stretch overflow-hidden">
           <AnimatePresence>
             {!isScrolled && (
@@ -82,7 +82,7 @@ export function Header() {
         <motion.div
           layout
           transition={{ duration: 1.4, ease: [0.6, 0.05, 0.01, 0.9] }}
-          className="absolute"
+          className=""
         >
           <Link href="/" aria-label="Home">
             <Image
