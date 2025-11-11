@@ -1,3 +1,28 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "project-1",
+      "description": "A screenshot of a modern web application dashboard.",
+      "imageUrl": "https://images.unsplash.com/photo-1559028006-448665bd7c7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3ZWIlMjBhcHB8ZW58MHx8fHwxNzYyNzg1MDk5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "web app"
+    },
+    {
+      "id": "project-2",
+      "description": "The landing page for a mobile-first e-commerce store.",
+      "imageUrl": "https://images.unsplash.com/photo-1643906226799-59eab234e41d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlY29tbWVyY2UlMjBtb2JpbGV8ZW58MHx8fHwxNzYyODU2NDQ0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "ecommerce mobile"
+    },
+    {
+      "id": "project-3",
+      "description": "A data visualization interface with charts and graphs.",
+      "imageUrl": "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxkYXRhJTIwdmlzdWFsaXphdGlvbnxlbnwwfHx8fDE3NjI4NTM3MjN8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "data visualization"
+    },
+    {
+      "id": "hero-background",
+      "description": "An abstract geometric background with blue and violet tones.",
+      "imageUrl": "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHxhYnN0cmFjdCUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzYyNzgyMjQzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageHint": "abstract background"
+    }
+  ]
 }
