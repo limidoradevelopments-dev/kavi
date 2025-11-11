@@ -35,90 +35,115 @@ export function Header() {
 
       <div className="hidden md:block">
         <Button
-            asChild
-            className="h-auto bg-[#29261f] text-white text-[0.650rem] hover:bg-[#29261f]/90 px-4 py-1.5 rounded-none font-button uppercase"
-            >
-            <Link href="#contact" className="tracking-wide">
-                CONTACT
-            </Link>
+          asChild
+          className="h-auto bg-[#29261f] text-white text-[0.650rem] hover:bg-[#29261f]/90 px-4 py-1.5 rounded-none font-button uppercase"
+        >
+          <Link href="#contact" className="tracking-wide">
+            CONTACT
+          </Link>
         </Button>
       </div>
 
-<div className='flex flex-row '>
-
-      <div className="hidden md:flex items-center justify-center gap-3.5 self-stretch overflow-hidden">
-        <AnimatePresence>
-          {!isScrolled && (
-            <motion.div
+      <div className="flex flex-row">
+        <div className="hidden md:flex items-center justify-center gap-3.5 self-stretch overflow-hidden">
+          <AnimatePresence>
+            {!isScrolled && (
+              <motion.div
                 initial={{ x: '100%', opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: '100%', opacity: 0 }}
                 transition={{ duration: 1.9, ease: 'easeInOut' }}
                 className="flex items-center gap-3.5"
-            >
-              <p className="w-44 text-[12px] text-right text-black/50 font-body line leading-tight">
-                The way to make every pixel perfect with your ideas
-              </p>
-            </motion.div>
-          )}
-        </AnimatePresence>
-         <AnimatePresence>
+              >
+                <p className="w-44 text-[12px] text-right text-black/50 font-body line leading-tight">
+                  The way to make every pixel perfect with your ideas
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <AnimatePresence>
             {!isScrolled && (
-                <motion.div
+              <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1.9, ease: 'easeInOut' }}
-                >
+              >
                 <div className="w-px h-16 bg-foreground/10"></div>
-                </motion.div>
+              </motion.div>
             )}
-        </AnimatePresence>
-   
-      </div>
+          </AnimatePresence>
+        </div>
 
-      <motion.div layout transition={{ duration: 0.9, ease: 'easeInOut' }}>
-        <Link href="/" aria-label="Home">
-          <Image
-            width={40}
-            height={40}
-            className="w-16 h-16 hidden md:block"
-            alt="Logo"
-            src="/logo.png"
-          />
-        </Link>
-      </motion.div>
-   </div>
+        {/* 🌀 Cinematic Logo Animation */}
+        <motion.div
+          layout
+          initial={{ scale: 0.95, opacity: 0, y: -10, filter: 'blur(4px)' }}
+          animate={{
+            scale: 1,
+            opacity: 1,
+            y: 0,
+            filter: 'blur(0px)',
+            transition: {
+              duration: 1.4,
+              ease: [0.6, 0.05, 0.01, 0.9],
+              delay: 0.4, // delayed slightly for cinematic sync
+            },
+          }}
+          exit={{
+            scale: 0.95,
+            opacity: 0,
+            y: -10,
+            filter: 'blur(4px)',
+            transition: {
+              duration: 0.8,
+              ease: 'easeInOut',
+            },
+          }}
+        >
+          <Link href="/" aria-label="Home">
+            <Image
+              width={40}
+              height={40}
+              className="w-16 h-16 hidden md:block"
+              alt="Logo"
+              src="/logo.png"
+            />
+          </Link>
+        </motion.div>
+      </div>
 
       <div className="md:hidden">
         <Button
-            variant="ghost"
-            size="icon"
-            className="w-9 h-auto p-0 rounded-none"
+          variant="ghost"
+          size="icon"
+          className="w-9 h-auto p-0 rounded-none"
         >
-            <Image
+          <Image
             src="/hamburger.svg"
             alt="Menu"
             width={32}
             height={32}
             className="scale-[2]"
-            />
+          />
         </Button>
       </div>
-      <div className='hidden md:block'>
-      <Button
-        variant="ghost"
-        size="icon"
-        className="w-9 h-auto p-0 rounded-none"
-      >
-        <Image
-          src="/hamburger.svg"
-          alt="Menu"
-          width={32}
-          height={32}
-          className="scale-[2]"
-        />
-      </Button>
+
+      <div className="hidden md:block">
+        <Button
+          variant="ghost"
+          size="icon"
+          className="w-9 h-auto p-0 rounded-none"
+        >
+          <Image
+            src="/hamburger.svg"
+            alt="Menu"
+            width={32}
+            height={32}
+            className="scale-[2]"
+          />
+        </Button>
       </div>
     </header>
   );
