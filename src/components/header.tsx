@@ -44,22 +44,7 @@ export function Header() {
         </Button>
       </div>
 
-      <div className="absolute left-1/2 -translate-x-1/2">
-        <motion.div
-            animate={{ x: isScrolled ? 0 : '50%' }}
-            transition={{ duration: 0.5, ease: 'easeInOut' }}
-        >
-            <Link href="/" aria-label="Home">
-            <Image
-                width={40}
-                height={40}
-                className="w-16 h-16"
-                alt="Logo"
-                src="/logo.png"
-            />
-            </Link>
-        </motion.div>
-      </div>
+<div className='flex flex-row '>
 
       <div className="hidden md:flex items-center justify-center gap-3.5 self-stretch overflow-hidden">
         <AnimatePresence>
@@ -78,7 +63,21 @@ export function Header() {
           )}
         </AnimatePresence>
          <div className="w-px h-16 bg-foreground/10"></div>
+   
       </div>
+
+      <motion.div layout transition={{ duration: 0.5, ease: 'easeInOut' }}>
+        <Link href="/" aria-label="Home">
+          <Image
+            width={40}
+            height={40}
+            className="w-16 h-16 hidden md:block"
+            alt="Logo"
+            src="/logo.png"
+          />
+        </Link>
+      </motion.div>
+   </div>
 
       <div className="md:hidden">
         <Button
