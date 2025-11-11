@@ -15,6 +15,7 @@ export default {
         'h3': '1.9rem',
         'h4': '1.55rem',
         'body': '1rem',
+        'button': '0.650rem',
       },
       fontFamily: {
         body: ['Arial', 'sans-serif'],
