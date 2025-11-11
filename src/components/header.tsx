@@ -8,7 +8,7 @@ import { Button } from './ui/button';
 export function Header() {
   return (
     <header className="absolute left-1/2 top-0 z-50 w-full max-w-7xl -translate-x-1/2 flex items-center justify-between border-b border-black/10 py-4 px-4 sm:px-6 lg:px-8">
-      <Button asChild className="h-auto bg-[#29261f] hover:bg-[#29261f]/90 px-4 py-1.5 rounded-none">
+      <Button asChild className="h-auto bg-[#29261f] text-[0.650rem] hover:bg-[#29261f]/90 px-4 py-1.5 rounded-none">
         <Link href="#contact" className="tracking-wide text-white">
           CONTACT
         </Link>

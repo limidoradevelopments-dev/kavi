@@ -20,6 +20,7 @@ export default {
       fontFamily: {
         body: ['Arial', 'sans-serif'],
         headline: ['"Cactus Classical Serif"', 'serif'],
+        button: ['Cagliostro', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
