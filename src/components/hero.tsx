@@ -2,42 +2,62 @@ import React from 'react';
 import { Button } from './ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export function Hero() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-background');
-  
   return (
     <section
       id="hero"
-      className="relative flex h-screen min-h-[600px] w-full items-center justify-center"
+      className="relative h-full w-full overflow-hidden py-8 lg:h-screen"
     >
-      {heroImage && (
-        <Image
-          src={heroImage.imageUrl}
-          alt={heroImage.description}
-          fill
-          className="object-cover"
-          priority
-          data-ai-hint={heroImage.imageHint}
-        />
-      )}
-      <div className="absolute inset-0 bg-background/70 dark:bg-background/80" />
-      <div className="relative z-10 text-center text-primary-foreground">
-        <div className="mx-auto max-w-3xl rounded-lg bg-black/20 p-8 backdrop-blur-sm">
-          <h1 className="font-headline text-4xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Alex Doe
-          </h1>
-          <p className="mt-6 text-lg leading-8 text-slate-200 sm:text-xl">
-            Full-Stack Developer & UI/UX Enthusiast
-          </p>
-          <div className="mt-10 flex items-center justify-center gap-x-6">
-            <Button asChild size="lg">
-              <Link href="#projects">View My Work</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link href="#contact">Get in Touch</Link>
-            </Button>
+      <div className="flex h-full w-full flex-1 flex-col gap-8 px-8 lg:flex-row">
+        {/**left side div . this hold the image slider */}
+        <div className="relative flex h-full w-full items-center justify-center py-2">
+          <Image
+            width={688}
+            height={500}
+            className="relative z-10 w-[56%]"
+            alt="Designer portrait"
+            src="/hero-image.png"
+            data-ai-hint="designer portrait"
+          />
+
+          <Image
+            width={688}
+            height={746}
+            className="absolute inset-0 z-[1] h-full w-full"
+            alt="Hero section decoration"
+            src="/hero-section-decoration.svg"
+          />
+        </div>
+
+        {/** right side div . this hold the content for hero section */}
+        <div className="relative h-full w-full">
+          <div className="flex flex-col gap-32">
+            <h1 className="font-headline text-h1 max-w-[20%] leading-tight text-[#f7f7f7]">
+              UI/UX DESIGNER
+            </h1>
+            <div className="flex max-w-[80%] flex-col items-start gap-7">
+              <h2 className="self-stretch font-headline text-h2 leading-tight text-foreground">
+                Doing right by those who trust us isn't a strategy — it's the only
+                way we know how to work.
+              </h2>
+              <div className="inline-flex items-center gap-4">
+                <Button asChild className="h-auto bg-[#29261f] px-7 py-2 hover:bg-[#29261f]/90">
+                  <a href="#" className="text-white">
+                    VIEW WORKS
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  className="h-auto border-[#29261f] bg-transparent px-7 py-2 hover:bg-[#29261f]/10"
+                >
+                  <a href="#" className="text-[#29261f]">
+                    CONTACT
+                  </a>
+                </Button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
