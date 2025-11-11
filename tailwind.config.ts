@@ -17,8 +17,8 @@ export default {
         'body': '1rem',
       },
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Inter', 'sans-serif'],
+        body: ['Arial', 'sans-serif'],
+        headline: ['"Cactus Classical Serif"', 'serif'],
         code: ['monospace'],
       },
       colors: {
