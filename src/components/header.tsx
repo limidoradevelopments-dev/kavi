@@ -20,8 +20,21 @@ export function Header() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full flex items-center justify-between border-b border-black/10 py-1 px-4 sm:px-6 lg:px-8 bg-background">
-      <div className="md:hidden">
+    <header className="fixed top-0 left-0 z-50 w-full grid grid-cols-2 md:grid-cols-3 items-center justify-between border-b border-black/10 py-1 px-4 sm:px-6 lg:px-8 bg-background">
+      {/* --- CTA BUTTON (Left) --- */}
+      <div className="hidden md:flex justify-start">
+        <Button
+          asChild
+          className="h-auto bg-[#29261f] text-white text-[0.650rem] hover:bg-[#29261f]/90 px-4 py-1.5 rounded-none font-button uppercase"
+        >
+          <Link href="#contact" className="tracking-wide">
+            CONTACT
+          </Link>
+        </Button>
+      </div>
+
+      {/* --- MOBILE LOGO (Left) --- */}
+      <div className="flex justify-start md:hidden">
         <Link href="/" aria-label="Home">
           <Image
             width={40}
@@ -33,19 +46,9 @@ export function Header() {
         </Link>
       </div>
 
-      <div className="hidden md:block">
-        <Button
-          asChild
-          className="h-auto bg-[#29261f] text-white text-[0.650rem] hover:bg-[#29261f]/90 px-4 py-1.5 rounded-none font-button uppercase"
-        >
-          <Link href="#contact" className="tracking-wide">
-            CONTACT
-          </Link>
-        </Button>
-      </div>
-
-      <div className="flex flex-row">
-        <div className="hidden md:flex items-center justify-center gap-3.5 self-stretch overflow-hidden">
+      {/* --- ANIMATION & LOGO (Center) --- */}
+      <div className="hidden md:flex justify-center items-center h-16 relative">
+        <div className="flex items-center justify-center gap-3.5 self-stretch overflow-hidden">
           <AnimatePresence>
             {!isScrolled && (
               <motion.div
@@ -76,37 +79,16 @@ export function Header() {
           </AnimatePresence>
         </div>
 
-        {/* 🌀 Cinematic Logo Animation */}
         <motion.div
           layout
-          initial={{ scale: 0.95, opacity: 0, y: -10, filter: 'blur(4px)' }}
-          animate={{
-            scale: 1,
-            opacity: 1,
-            y: 0,
-            filter: 'blur(0px)',
-            transition: {
-              duration: 1.4,
-              ease: [0.6, 0.05, 0.01, 0.9],
-              delay: 0.4, // delayed slightly for cinematic sync
-            },
-          }}
-          exit={{
-            scale: 0.95,
-            opacity: 0,
-            y: -10,
-            filter: 'blur(4px)',
-            transition: {
-              duration: 0.8,
-              ease: 'easeInOut',
-            },
-          }}
+          transition={{ duration: 1.4, ease: [0.6, 0.05, 0.01, 0.9] }}
+          className="absolute"
         >
           <Link href="/" aria-label="Home">
             <Image
               width={40}
               height={40}
-              className="w-16 h-16 hidden md:block"
+              className="w-16 h-16"
               alt="Logo"
               src="/logo.png"
             />
@@ -114,23 +96,8 @@ export function Header() {
         </motion.div>
       </div>
 
-      <div className="md:hidden">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="w-9 h-auto p-0 rounded-none"
-        >
-          <Image
-            src="/hamburger.svg"
-            alt="Menu"
-            width={32}
-            height={32}
-            className="scale-[2]"
-          />
-        </Button>
-      </div>
-
-      <div className="hidden md:block">
+      {/* --- HAMBURGER MENU (Right) --- */}
+      <div className="flex justify-end">
         <Button
           variant="ghost"
           size="icon"
