@@ -33,11 +33,11 @@ export function Hero() {
         {/** right side div . this hold the content for hero section */}
         <div className="relative h-full w-full">
           <div className="flex flex-col gap-8 md:gap-32">
-            <h1 className="font-headline text-mobile-h1 md:text-h1 max-w-[20%] leading-tight text-[#f7f7f7]">
+            <h1 className="font-headline text-mobile-h1 leading-tight text-[#f7f7f7] md:text-h1">
               UI/UX DESIGNER
             </h1>
             <div className="flex max-w-full flex-col items-start gap-7 md:max-w-[80%]">
-              <h2 className="self-stretch font-headline text-mobile-h3 md:text-h3 leading-tight text-foreground">
+              <h2 className="self-stretch font-headline text-mobile-h3 leading-tight text-foreground md:text-h3">
                 Doing right by those who trust us isn't a strategy — it's the only
                 way we know how to work.
               </h2>
