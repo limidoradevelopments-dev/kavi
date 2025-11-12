@@ -48,7 +48,7 @@ export function Header() {
 
       {/* --- ANIMATION & LOGO (Center) --- */}
       <div className="hidden lg:flex justify-center w-full items-center relative h-16">
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 flex items-center gap-3.5">
+        <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3.5">
           <AnimatePresence>
             {!isScrolled && (
               <motion.div
@@ -58,8 +58,10 @@ export function Header() {
                 transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
                 className="flex items-center gap-3.5 overflow-hidden"
               >
-                <p className="w-44 text-[12px] text-right text-black/50 font-body line leading-tight whitespace-nowrap">
-                  The way to make every pixel perfect with your ideas
+                <p className="pr-[1rem] w-[100%] text-[12px] text-end text-black/50 font-body line leading-tight whitespace-nowrap">
+                  The way to make every pixel  
+                  <br />
+                  perfect with your ideas
                 </p>
                 <div className="w-px h-16 bg-foreground/10"></div>
               </motion.div>
@@ -68,7 +70,7 @@ export function Header() {
 
           <motion.div
             layout
-            transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+            transition={{ duration: 1, ease: [0.76, 0, 0.24, 2] }}
           >
             <Link href="/" aria-label="Home">
               <Image
