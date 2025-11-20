@@ -34,7 +34,7 @@ export function Header() {
       </div>
 
       {/* --- MOBILE LOGO (Left) --- */}
-      <div className="flex justify-start md:hidden">
+      <div className="flex md:justify-center lg:justify-start lg:hidden">
         <Link href="/" aria-label="Home">
           <Image
             width={40}

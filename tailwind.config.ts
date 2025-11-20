@@ -14,6 +14,7 @@ export default {
         h2: '2.95rem',
         h3: '1.9rem',
         h4: '1.55rem',
+        h5: '1.25rem',
         body: '1rem',
         button: '0.650rem',
         'mobile-h1': '2.350rem',

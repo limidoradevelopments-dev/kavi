@@ -18,10 +18,11 @@ const marqueeItems = [
 
 const MarqueeItem = ({ text }: { text: string }) => (
   <div className="inline-flex items-center gap-2.5 flex-shrink-0">
-    <Image width={31} height={29} alt="Decorative icon" src="/-.svg" />
-    <span className="font-headline text-mobile-h3 text-muted-foreground whitespace-nowrap">
+    <Image width={31} height={29} alt="Decorative icon" src="/symbol-decoration.svg" />
+    <span className="font-headline text-mobile-h4 md:text-h5 text-muted-foreground whitespace-nowrap">
       {text}
     </span>
+    <Image width={31} height={29} alt="Decorative icon" src="/symbol-decoration.svg" />
   </div>
 );
 
