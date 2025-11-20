@@ -12,7 +12,7 @@ interface MatchCutImageProps {
 
 export function MatchCutImage({ src1, src2 }: MatchCutImageProps) {
   const containerRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
+  const imageRef = useRef<HTMLImageElement | null>(null);
   const [currentSrc, setCurrentSrc] = useState(src1);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -22,39 +22,86 @@ export function MatchCutImage({ src1, src2 }: MatchCutImageProps) {
     setIsAnimating(true);
     const nextSrc = currentSrc === src1 ? src2 : src1;
 
+    const img = imageRef.current;
     const tl = gsap.timeline({
-      onComplete: () => {
-        setIsAnimating(false);
-      },
+      onComplete: () => setIsAnimating(false),
     });
 
-    // Phase 1: Whip-out with a "digital" feel
-    tl.to(imageRef.current, {
-      duration: 0.2,
-      scale: 1.1,
-      filter: 'brightness(2.5) contrast(3)',
-      ease: 'steps(8)',
+    const shake = {
+      x: '+=5',
+      y: '+=3',
+      duration: 0.02,
+      repeat: 3,
+      yoyo: true,
+      ease: 'power1.inOut',
+    };
+
+    // 🎬 1) WHIP-PAN + MOTION BLUR + LENS DISTORT
+    tl.to(img, {
+      duration: 0.22,
+      x: -140,
+      scale: 1.18,
+      rotateZ: -1.8,
+      filter:
+        'blur(12px) brightness(2.3) contrast(3) saturate(1.3) hue-rotate(-5deg)',
+      ease: 'power3.in',
     })
-      .to(imageRef.current, {
-        duration: 0.1,
-        scale: 0.9,
-        filter: 'brightness(1.5) contrast(2)',
-        ease: 'power2.in',
+
+      // 🔥 MINI CAMERA SHAKE DURING THE WHIP
+      .to(img, shake, '<')
+
+      // 🎞 2) EXPOSURE FLASH + CHROMATIC ABERRATION
+      .to(img, {
+        duration: 0.12,
+        filter:
+          'blur(18px) brightness(3.2) contrast(4) saturate(1.7) drop-shadow(4px 0px 4px rgba(255,0,80,0.6))',
+        ease: 'power1.inOut',
       })
-      // Phase 2: Instant Cut
+
+      // 🎬 HARD CUT SWITCH (NO FADE)
       .add(() => {
-        setCurrentSrc(nextSrc);
+        img.src = nextSrc;
       })
-      // Phase 3: Settle-in
-      .set(imageRef.current, {
-        scale: 1.2,
-        filter: 'brightness(3) contrast(3)',
-      })
-      .to(imageRef.current, {
-        duration: 0.4,
-        scale: 1,
-        filter: 'brightness(1) contrast(1)',
-        ease: 'power3.out',
+
+      // 🎥 3) REVERSE WHIP + RGB SPLIT SETTLE
+      .fromTo(
+        img,
+        {
+          x: 160,
+          scale: 1.12,
+          rotateZ: 1.4,
+          filter:
+            'blur(10px) brightness(2) contrast(3) saturate(1.2) drop-shadow(-4px 0px 4px rgba(0,150,255,0.5))',
+        },
+        {
+          duration: 0.34,
+          x: 0,
+          scale: 1,
+          rotateZ: 0,
+          filter:
+            'blur(0px) brightness(1) contrast(1) saturate(1) drop-shadow(0px 0px 0px rgba(0,0,0,0))',
+          ease: 'power4.out',
+        }
+      )
+
+      // 🎥 subtle "settle bounce" like real camera stabilization
+      .to(
+        img,
+        {
+          duration: 0.15,
+          x: '-=6',
+          y: '+=4',
+          rotateZ: -0.4,
+          ease: 'power2.out',
+        },
+        '-=0.1'
+      )
+      .to(img, {
+        duration: 0.2,
+        x: 0,
+        y: 0,
+        rotateZ: 0,
+        ease: 'power2.out',
       });
   };
 
@@ -65,18 +112,20 @@ export function MatchCutImage({ src1, src2 }: MatchCutImageProps) {
     >
       <div className="relative w-full h-full">
         <Image
-          ref={imageRef}
-          key={currentSrc}
           src={currentSrc}
-          alt="Match cut transition image"
+          alt="Cinematic Match Cut Image"
           fill
-          className="object-cover"
+          className="object-cover will-change-transform will-change-filter"
           sizes="(max-width: 768px) 100vw, 80vw"
+          onLoadingComplete={(img) => {
+            imageRef.current = img;
+          }}
         />
       </div>
+
       <div className="absolute bottom-4 z-10">
         <Button onClick={handleTransition} disabled={isAnimating}>
-          {isAnimating ? 'Animating...' : 'Trigger Cut'}
+          {isAnimating ? 'Cutting...' : 'Cinematic Cut'}
         </Button>
       </div>
     </div>

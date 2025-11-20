@@ -28,7 +28,7 @@ const MarqueeItem = ({ text }: { text: string }) => (
 
 export function Marquee() {
   return (
-    <section className="flex flex-col items-center justify-center gap-2.5 self-stretch w-full bg-[#f7f7f7] overflow-hidden py-6">
+    <section className="flex flex-col items-center justify-center gap-2.5 self-stretch w-full bg-[#f7f7f7] overflow-hidden py-6 mt-[5rem]">
       <div className="inline-flex items-center justify-center gap-[53px] animate-marquee">
         {marqueeItems.map((text, index) => (
           <MarqueeItem key={index} text={text} />
