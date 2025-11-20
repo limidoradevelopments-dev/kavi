@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { Button } from './ui/button';
@@ -28,27 +28,33 @@ export function MatchCutImage({ src1, src2 }: MatchCutImageProps) {
       },
     });
 
-    // Phase 1: Whip-out
+    // Phase 1: Whip-out with a "digital" feel
     tl.to(imageRef.current, {
-      duration: 0.3,
-      scale: 1.2,
-      filter: 'blur(20px) brightness(2.5)',
-      ease: 'power2.in',
+      duration: 0.2,
+      scale: 1.1,
+      filter: 'brightness(2.5) contrast(3)',
+      ease: 'steps(8)',
     })
+      .to(imageRef.current, {
+        duration: 0.1,
+        scale: 0.9,
+        filter: 'brightness(1.5) contrast(2)',
+        ease: 'power2.in',
+      })
       // Phase 2: Instant Cut
       .add(() => {
         setCurrentSrc(nextSrc);
       })
       // Phase 3: Settle-in
       .set(imageRef.current, {
-        scale: 0.8,
-        filter: 'blur(20px) brightness(2.5)',
+        scale: 1.2,
+        filter: 'brightness(3) contrast(3)',
       })
       .to(imageRef.current, {
-        duration: 0.5,
+        duration: 0.4,
         scale: 1,
-        filter: 'blur(0px) brightness(1)',
-        ease: 'power2.out',
+        filter: 'brightness(1) contrast(1)',
+        ease: 'power3.out',
       });
   };
 
