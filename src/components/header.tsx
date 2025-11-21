@@ -24,28 +24,9 @@ export function Header() {
       {/* --- ANIMATION & LOGO (Left) --- */}
       <div className="flex justify-start w-full items-center relative h-16">
         <div className="absolute left-0 flex items-center gap-3.5">
-          <AnimatePresence>
-            {!isScrolled && (
-              <motion.div
-                initial={{ opacity: 0, width: 0 }}
-                animate={{ opacity: 1, width: 'auto' }}
-                exit={{ opacity: 0, width: 0 }}
-                transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
-                className="hidden lg:flex items-center gap-3.5 overflow-hidden"
-              >
-                <p className="pr-[1rem] w-[100%] text-[12px] text-end text-black/50 font-body line leading-tight whitespace-nowrap">
-                  The way to make every pixel  
-                  <br />
-                  perfect with your ideas
-                </p>
-                <div className="w-px h-16 bg-foreground/10"></div>
-              </motion.div>
-            )}
-          </AnimatePresence>
-
           <motion.div
             layout
-            transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+            transition={{ duration: 1, ease: [0.6, 0.01, 0.05, 0.95] }}
           >
             <Link href="/" aria-label="Home">
               <Image
@@ -57,6 +38,38 @@ export function Header() {
               />
             </Link>
           </motion.div>
+
+          <AnimatePresence>
+            {!isScrolled && (
+              <motion.div
+                initial={{ opacity: 0, width: 0 }}
+                animate={{ opacity: 1, width: 'auto' }}
+                exit={{ opacity: 0, width: 0 }}
+                transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+                className="hidden lg:flex items-center gap-3.5 overflow-hidden"
+              >
+                <p className="pr-[1rem] w-[100%] text-[12px] text-end text-black/50 font-body line leading-tight whitespace-nowrap">
+                  The way to make every pixel
+                  <br />
+                  perfect with your ideas
+                </p>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <AnimatePresence>
+            {!isScrolled && (
+              <motion.div
+                initial={{ opacity: 0, width: 0 }}
+                animate={{ opacity: 1, width: 'auto' }}
+                exit={{ opacity: 0, width: 0 }}
+                transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
+                className="hidden lg:flex"
+              >
+                <div className="w-px h-16 bg-foreground/10"></div>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
       </div>
 
