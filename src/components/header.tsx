@@ -20,35 +20,10 @@ export function Header() {
   }, []);
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full grid grid-cols-2 md:grid-cols-3 items-center justify-between border-b border-black/10 py-1 px-4 sm:px-6 lg:px-8 bg-background">
-      {/* --- CTA BUTTON (Left) --- */}
-      <div className="hidden md:flex justify-start">
-        <Button
-          asChild
-          className="h-auto bg-[#29261f] text-white text-[0.650rem] hover:bg-[#29261f]/90 px-4 py-1.5 rounded-none font-button uppercase"
-        >
-          <Link href="#contact" className="tracking-wide">
-            CONTACT
-          </Link>
-        </Button>
-      </div>
-
-      {/* --- MOBILE LOGO (Left) --- */}
-      <div className="flex md:justify-center lg:justify-start lg:hidden">
-        <Link href="/" aria-label="Home">
-          <Image
-            width={40}
-            height={40}
-            className="w-16 h-16"
-            alt="Logo"
-            src="/logo.png"
-          />
-        </Link>
-      </div>
-
-      {/* --- ANIMATION & LOGO (Center) --- */}
-      <div className="hidden lg:flex justify-center w-full items-center relative h-16">
-        <div className="absolute left-1/2 -translate-x-1/2 flex items-center gap-3.5">
+    <header className="fixed top-0 left-0 z-50 w-full grid grid-cols-2 items-center justify-between border-b border-black/10 py-1 px-4 sm:px-6 lg:px-8 bg-background">
+      {/* --- ANIMATION & LOGO (Left) --- */}
+      <div className="flex justify-start w-full items-center relative h-16">
+        <div className="absolute left-0 flex items-center gap-3.5">
           <AnimatePresence>
             {!isScrolled && (
               <motion.div
@@ -56,7 +31,7 @@ export function Header() {
                 animate={{ opacity: 1, width: 'auto' }}
                 exit={{ opacity: 0, width: 0 }}
                 transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
-                className="flex items-center gap-3.5 overflow-hidden"
+                className="hidden lg:flex items-center gap-3.5 overflow-hidden"
               >
                 <p className="pr-[1rem] w-[100%] text-[12px] text-end text-black/50 font-body line leading-tight whitespace-nowrap">
                   The way to make every pixel  
@@ -70,7 +45,7 @@ export function Header() {
 
           <motion.div
             layout
-            transition={{ duration: 1, ease: [0.76, 0, 0.24, 2] }}
+            transition={{ duration: 1, ease: [0.76, 0, 0.24, 1] }}
           >
             <Link href="/" aria-label="Home">
               <Image
