@@ -25,7 +25,7 @@ export default {
       },
       fontFamily: {
         body: ['Arial', 'sans-serif'],
-        headline: ['"Cactus Classical Serif"', 'serif'],
+        headline: ['Boska', 'serif'],
         button: ['Cagliostro', 'sans-serif'],
         code: ['monospace'],
       },

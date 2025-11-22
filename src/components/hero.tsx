@@ -13,17 +13,20 @@ export function Hero() {
       className="overflow-hidden relative w-full py-8 pt-[7rem] h-full min-h-screen flex items-center justify-between"
     >
       <div className="flex flex-col items-center justify-between gap-8 px-4 lg:flex-row lg:px-8">
+        
         {/* Left: Image Section */}
         <div className="relative flex w-full items-center justify-center lg:w-1/2">
           <div className="relative w-full lg:max-w-[95vw] lg:min-h-[75vh] md:aspect-[4/3] lg:w-full aspect-[4/4]">
+
             <PixelatedImage
               images={['/hero-image.png', '/hero-image-2.png']}
-              className="relative z-10 object-contain"
-              alt="Designer portrait"
+              className="object-contain"
+             
             />
+
             <Image
               fill
-              className="absolute inset-0 z-[1] object-contain scale-y-[1.1]"
+              className="inset-0 z-[-1] object-contain scale-y-[1.1]"
               alt="Hero section decoration"
               src="/hero-section-decoration.svg"
             />
@@ -62,6 +65,7 @@ export function Hero() {
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

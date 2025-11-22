@@ -110,7 +110,7 @@ export function Header() {
               <Image
                 width={40}
                 height={40}
-                className="w-16 h-16"
+                className="w-[2.6rem] h-[2.6rem]"
                 alt="Logo"
                 src="/logo.png"
               />
