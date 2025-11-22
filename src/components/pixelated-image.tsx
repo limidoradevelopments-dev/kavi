@@ -144,6 +144,8 @@ export const PixelatedImage: React.FC<PixelatedImageProps> = ({
               ...style,
               filter: transitioning ? 'blur(20px)' : 'blur(0px)',
               transition: 'filter 0.35s ease',
+              width: '100%',
+              height: '100%',
             }}
             onLoad={() => setIsLoaded(true)}
             priority={index === 0}
