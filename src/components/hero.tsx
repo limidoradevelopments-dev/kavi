@@ -4,6 +4,7 @@ import React from 'react';
 import { Button } from './ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
+import { PixelatedImage } from './pixelated-image';
 
 export function Hero() {
   return (
@@ -15,12 +16,10 @@ export function Hero() {
         {/* Left: Image Section */}
         <div className="relative flex w-full items-center justify-center lg:w-1/2">
           <div className="relative w-full lg:max-w-[95vw] lg:min-h-[75vh] md:aspect-[4/3] lg:w-full aspect-[4/4]">
-            <Image
-              fill
+            <PixelatedImage
+              images={['/hero-image.png', '/hero-image-2.png']}
               className="relative z-10 object-contain"
               alt="Designer portrait"
-              src="/hero-image.png"
-              sizes="(max-width: 768px) 80vw, 70vw"
             />
             <Image
               fill
