@@ -133,7 +133,7 @@ export const PixelatedImage: React.FC<PixelatedImageProps> = ({
           animate={{ opacity: transitioning ? 0 : 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.35 }}
-          className="absolute inset-0"
+          className="absolute inset-0 z-[11111]"
         >
           <Image
             src={currentSrc}
