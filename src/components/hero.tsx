@@ -147,9 +147,9 @@ export function Hero() {
             <div className="inline-flex flex-wrap items-center gap-4">
               <Button
                 asChild
-                className="h-auto rounded-none bg-[#29261f] px-5 py-1 text-button text-[#f7f7f7] hover:bg-[#29261f]/90"
+                className="h-auto rounded-none bg-[#29261f] px-5 py-1 text-[#f7f7f7] hover:bg-[#29261f]/90"
               >
-                <Link href="#contact" className="tracking-wide text-button">
+                <Link href="#contact" className="tracking-wide">
                   VIEW WORKS
                 </Link>
               </Button>
@@ -157,9 +157,9 @@ export function Hero() {
               <Button
                 asChild
                 variant="outline"
-                className="h-auto rounded-none border-[#29261f] bg-transparent px-5 py-1 text-button text-[#29261f] "
+                className="h-auto rounded-none border-[#29261f] bg-transparent px-5 py-1 text-[#29261f]"
               >
-                <Link href="#contact" className="tracking-wide text-button">CONTACT</Link>
+                <Link href="#contact" className="tracking-wide">CONTACT</Link>
               </Button>
             </div>
           </div>
