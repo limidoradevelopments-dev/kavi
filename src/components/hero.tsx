@@ -143,6 +143,11 @@ export function Hero() {
               Doing right by those who trust us isn't a strategy — it's the only
               way we know how to work.
             </h2>
+            <div className="pt-4">
+              <Button asChild>
+                <Link href="#works">VIEW WORKS</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
