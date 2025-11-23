@@ -95,7 +95,7 @@ export function Header() {
   };
 
   return (
-    <header className="fixed top-0 left-0 z-50 w-full grid grid-cols-2 items-center justify-between border-b border-black/10 py-1 px-4 sm:px-6 lg:px-8 bg-background">
+    <header className="fixed top-0 left-0 z-50 w-full grid grid-cols-2 items-center justify-between border-b border-black/10  px-4 sm:px-6 lg:px-8 bg-background">
 
       {/* LEFT — Logo and animated text */}
       <div className="flex justify-start w-full items-center relative h-16">

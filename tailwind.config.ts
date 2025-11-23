@@ -10,21 +10,34 @@ export default {
   theme: {
     extend: {
       fontSize: {
-        h1: '5.8rem',
-        h2: '2.95rem',
-        h3: '1.9rem',
-        h4: '1.55rem',
-        h5: '1.25rem',
+        h1: '5.5rem',
+        h2: '3.5rem',
+        h3: '2.5rem',
+        h4: '1.75rem',
+        h5: '1.35rem',
         body: '1rem',
-        button: '0.650rem',
-        'mobile-h1': '2.550rem',
-        'mobile-h2': '1.550rem',
-        'mobile-h3': '1.250rem',
-        'mobile-h4': '1rem',
-        'mobile-body': '0.800rem',
+        button: '0.9rem',
+        
+        // TABLET 
+        'tablet-h1': '4.4rem',
+        'tablet-h2': '3.2rem',
+        'tablet-h3': '2.25rem',
+        'tablet-h4': '1.6rem',
+        'tablet-h5': '1.25rem',
+        'tablet-body': '1rem',
+        'tablet-button': '0.9rem',
+        
+        // MOBILE
+        'mobile-h1': '2.8rem',
+        'mobile-h2': '2.35rem',
+        'mobile-h3': '1.7rem',
+        'mobile-h4': '1.32rem',
+        'mobile-h5': '1.18rem',
+        'mobile-body': '1rem',    
+        'mobile-button': '0.9rem' 
       },
       fontFamily: {
-        body: ['Arial', 'sans-serif'],
+        body: ['Switzer', 'sans-serif'],
         headline: ['Boska', 'serif'],
         button: ['Cagliostro', 'sans-serif'],
         code: ['monospace'],
