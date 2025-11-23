@@ -39,7 +39,7 @@ export default {
       fontFamily: {
         body: ['Switzer', 'sans-serif'],
         headline: ['Boska', 'serif'],
-        button: ['Cagliostro', 'sans-serif'],
+        button: ['Switzer', 'sans-serif'],
         code: ['monospace'],
       },
       colors: {
