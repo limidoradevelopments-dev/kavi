@@ -139,7 +139,7 @@ export function Hero() {
           </div>
 
           <div className="flex flex-col items-start gap-4 md:max-w-[95%]">
-            <h2 className="font-headline text-mobile-h3 leading-tight text-foreground md:text-h5">
+            <h2 className="font-body text-mobile-body leading-tight text-foreground md:text-body">
               Doing right by those who trust us isn't a strategy — it's the only
               way we know how to work.
             </h2>
@@ -147,9 +147,9 @@ export function Hero() {
             <div className="inline-flex flex-wrap items-center gap-4">
               <Button
                 asChild
-                className="h-auto rounded-none bg-[#29261f] px-5 py-1 text-[0.75rem] text-[#f7f7f7] hover:bg-[#29261f]/90"
+                className="h-auto rounded-none bg-[#29261f] px-5 py-1 text-button text-[#f7f7f7] hover:bg-[#29261f]/90"
               >
-                <Link href="#contact" className="tracking-wide">
+                <Link href="#contact" className="tracking-wide text-button">
                   VIEW WORKS
                 </Link>
               </Button>
@@ -157,9 +157,9 @@ export function Hero() {
               <Button
                 asChild
                 variant="outline"
-                className="h-auto rounded-none border-[#29261f] bg-transparent px-5 py-1 text-[0.75rem] text-[#29261f] hover:bg-[#29261f]/10"
+                className="h-auto rounded-none border-[#29261f] bg-transparent px-5 py-1 text-button text-[#29261f] "
               >
-                <Link href="#contact">CONTACT</Link>
+                <Link href="#contact" className="tracking-wide text-button">CONTACT</Link>
               </Button>
             </div>
           </div>

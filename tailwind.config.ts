@@ -33,8 +33,8 @@ export default {
         'mobile-h3': '1.7rem',
         'mobile-h4': '1.32rem',
         'mobile-h5': '1.18rem',
-        'mobile-body': '1rem',    
-        'mobile-button': '0.9rem' 
+        'mobile-body': '0.95rem',    
+        'mobile-button': '0.7rem' 
       },
       fontFamily: {
         body: ['Switzer', 'sans-serif'],

@@ -15,7 +15,7 @@
     font-family: 'Switzer';
     src: url('/fonts/Switzer-Light.woff2') format('woff2');
     font-weight: 300;
-    font-style: normal;
+    font-style: light;
     font-display: swap;
   }
 
