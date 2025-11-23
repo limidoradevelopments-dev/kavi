@@ -143,22 +143,6 @@ export function Hero() {
               Doing right by those who trust us isn't a strategy — it's the only
               way we know how to work.
             </h2>
-
-            <div className="inline-flex flex-wrap items-center gap-4">
-              <Button
-                asChild
-                className="h-auto rounded-none bg-[#29261f] px-5 py-1 text-[#f7f7f7] hover:bg-[#29261f]/90"
-              >
-                <Link href="#contact">VIEW WORKS</Link>
-              </Button>
-              <Button
-                asChild
-                variant="outline"
-                className="h-auto rounded-none border-[#29261f] bg-transparent px-5 py-1 text-[#29261f]"
-              >
-                <Link href="#contact">CONTACT</Link>
-              </Button>
-            </div>
           </div>
         </div>
       </div>
