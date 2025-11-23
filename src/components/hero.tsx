@@ -119,14 +119,14 @@ export function Hero() {
         <div className="flex w-full flex-col gap-[5rem] md:gap-2 lg:w-1/2">
           <div className="flex w-full flex-col lg:max-w-[70%] ">
             {/**year text tansition  */}
-            <div className='flex flex-row gap-2 items-baseline text-[0.8rem] '>
-              <span  className="">*</span>
+            <div className="flex flex-row gap-2 items-baseline text-[0.8rem] ">
+              <span className="">*</span>
 
               <span className="flex items-baseline text-[12px] leading-none font-bold ">
                 202 <AnimatedDigit finalDigit={5} />
               </span>
 
-              <span  className="">*</span>
+              <span className="">*</span>
             </div>
 
             <h1 className="font-headline text-mobile-h1 leading-none text-[#29261f] md:text-tablet-h1 lg:text-h1 lg:max-w-[30%]">
@@ -134,7 +134,7 @@ export function Hero() {
             </h1>
 
             <span className="text-[12px] text-end w-full">
-              *  BASED IN SRI LANKA  *
+              * BASED IN SRI LANKA *
             </span>
           </div>
 
@@ -149,17 +149,14 @@ export function Hero() {
                 asChild
                 className="h-auto rounded-none bg-[#29261f] px-5 py-1 text-[#f7f7f7] hover:bg-[#29261f]/90"
               >
-                <Link href="#contact" className="tracking-wide">
-                  VIEW WORKS
-                </Link>
+                <Link href="#contact">VIEW WORKS</Link>
               </Button>
-
               <Button
                 asChild
                 variant="outline"
                 className="h-auto rounded-none border-[#29261f] bg-transparent px-5 py-1 text-[#29261f]"
               >
-                <Link href="#contact" className="tracking-wide">CONTACT</Link>
+                <Link href="#contact">CONTACT</Link>
               </Button>
             </div>
           </div>
