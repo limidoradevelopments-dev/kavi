@@ -38,11 +38,11 @@ export function WorksCTA() {
       {/* Bottom Image Collage */}
       <div className="relative mt-16 md:mt-24 w-full flex justify-center">
         <Image
-          src="/works-cta-image.svg"
+          src="/works-cta-section-image.svg"
           alt="A collage of various design projects"
           width={1200}
           height={600}
-          className="w-full max-w-6xl h-auto"
+          className="w-full max-w-6xl h-auto shadow-xl"
         />
       </div>
     </section>
