@@ -139,7 +139,7 @@ export function Hero() {
           </div>
 
           <div className="flex flex-col items-start  md:max-w-[95%]">
-            <h2 className="font-body text-mobile-body leading-tight text-foreground md:text-body">
+            <h2 className="font-body text-mobile-body leading-normal text-foreground md:text-body">
             Hi, I’m Kavi. I design intuitive and engaging digital experiences that don’t just look good, but speak to users, making every interaction meaningful and memorable.
             </h2>
             <div className="pt-4">
