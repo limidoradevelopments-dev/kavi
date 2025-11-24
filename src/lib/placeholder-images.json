@@ -2,8 +2,8 @@
   "placeholderImages": [
     {
       "id": "project-1",
-      "description": "A screenshot of a modern web application dashboard.",
-      "imageUrl": "https://images.unsplash.com/photo-1559028006-448665bd7c7f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw0fHx3ZWIlMjBhcHB8ZW58MHx8fHwxNzYyNzg1MDk5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "description": "A screenshot of a modern web application dashboard called 'Molisem'.",
+      "imageUrl": "https://images.unsplash.com/photo-1618761714954-0b8cd0026356?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw1fHx3ZWIlMjBhcHB8ZW58MHx8fHwxNzYzOTA1MjU0fDA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageHint": "web app"
     },
     {

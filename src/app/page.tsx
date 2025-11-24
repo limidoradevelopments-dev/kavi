@@ -3,6 +3,7 @@ import { Hero } from '@/components/hero';
 import { Marquee } from '@/components/marquee';
 import { AboutStory } from '@/components/about-story';
 import { SectionCinematicReveal } from '@/components/section-cinematic-reveal';
+import { SelectedWorks } from '@/components/selected-works';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
           <Marquee />
         </SectionCinematicReveal>
         <AboutStory />
+        <SelectedWorks />
       </main>
     </div>
   );
