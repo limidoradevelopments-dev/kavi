@@ -14,7 +14,9 @@ export default function Home() {
           <Hero />
           <Marquee />
         </SectionCinematicReveal>
-        <AboutStory />
+        <SectionCinematicReveal>
+          <AboutStory />
+        </SectionCinematicReveal>
         <SelectedWorks />
       </main>
     </div>
