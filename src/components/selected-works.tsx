@@ -8,7 +8,7 @@ export function SelectedWorks() {
   return (
     <section
       id="selected-works"
-      className="w-full py-24 md:py-32 lg:py-40 bg-background"
+      className="w-full py-16 md:py-20 lg:py-24 bg-background"
     >
       <div className="container mx-auto px-4">
         {/* Header Section */}

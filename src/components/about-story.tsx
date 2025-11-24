@@ -5,7 +5,7 @@ export function AboutStory() {
   return (
     <section
       id="about-story"
-      className="w-full py-24 md:py-32 lg:py-40 flex items-center justify-center bg-background"
+      className="w-full py-16 md:py-20 lg:py-24 flex items-center justify-center bg-background"
     >
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
