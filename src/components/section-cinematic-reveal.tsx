@@ -18,8 +18,8 @@ export function SectionCinematicReveal({
 
   // Smooth cinematic transitions
   const opacity = useTransform(scrollYProgress, [0.7, 1], [0, 1]);
-  const blur = useTransform(scrollYProgress, [0.7, 1], [0, 10]);
-  const y = useTransform(scrollYProgress, [0.7, 1], [0, 10]);
+  const blur = useTransform(scrollYProgress, [0.7, 1], [10, 0]);
+  const y = useTransform(scrollYProgress, [0.7, 1], [10, 0]);
 
   return (
     <div ref={sectionRef} className="relative w-full">
@@ -39,8 +39,8 @@ export function SectionCinematicReveal({
         <motion.div
           className="absolute inset-0"
           style={{
-            backdropFilter: `blur(${blur.get()}px)`,
-            WebkitBackdropFilter: `blur(${blur.get()}px)`,
+            backdropFilter: useTransform(blur, v => `blur(${v}px)`),
+            WebkitBackdropFilter: useTransform(blur, v => `blur(${v}px)`),
             background: "rgba(0,0,0,0.05)",
             maskImage:
               "linear-gradient(to top, black 15%, transparent 100%)",
