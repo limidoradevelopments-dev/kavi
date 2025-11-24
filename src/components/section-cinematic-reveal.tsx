@@ -10,50 +10,38 @@ export function SectionCinematicReveal({
 }) {
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
-  // Track scroll of THIS section
+  // Track the scroll progress of this specific section
+  // "end end" -> When the bottom of the section hits the bottom of the viewport
+  // "end start" -> When the bottom of the section hits the top of the viewport
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end end"],
+    offset: ["end end", "end start"],
   });
 
-  // Smooth cinematic transitions, activating in the last 30% of the scroll
-  const opacity = useTransform(scrollYProgress, [0.7, 1], [0, 1]);
-  const blur = useTransform(scrollYProgress, [0.7, 1], [0, 10]);
-  const y = useTransform(scrollYProgress, [0.7, 1], [10, 0]);
+  // Animate from 0 to 1 as the section scrolls off screen
+  const opacity = useTransform(scrollYProgress, [0, 0.7], [0, 1]);
+  const blur = useTransform(scrollYProgress, [0, 0.7], [0, 8]); // Blur the content behind
 
   return (
     <div ref={sectionRef} className="relative w-full">
-      {/* SECTION CONTENT */}
+      {/* SECTION CONTENT - It will have the blur applied to it from the overlay */}
       {children}
 
       {/* CINEMATIC OVERLAY INSIDE THIS SECTION */}
       <motion.div
-        className="absolute bottom-0 left-0 w-full h-[45vh] pointer-events-none z-40"
+        className="absolute inset-0 w-full h-full pointer-events-none z-40"
         style={{
           opacity,
-          y,
-          willChange: "opacity, transform",
+          willChange: "opacity, backdrop-filter",
+          backdropFilter: useTransform(blur, (v) => `blur(${v}px)`),
+          WebkitBackdropFilter: useTransform(blur, (v) => `blur(${v}px)`),
         }}
       >
-        {/* SOFT BLUR */}
-        <motion.div
-          className="absolute inset-0"
-          style={{
-            backdropFilter: useTransform(blur, v => `blur(${v}px)`),
-            WebkitBackdropFilter: useTransform(blur, v => `blur(${v}px)`),
-            background: "rgba(0,0,0,0.05)",
-            maskImage:
-              "linear-gradient(to top, black 15%, transparent 100%)",
-            WebkitMaskImage:
-              "linear-gradient(to top, black 15%, transparent 100%)",
-          }}
-        />
-
         {/* DARK CINEMATIC SHADE */}
         <div
           className="
             absolute inset-0
-            bg-gradient-to-t from-black/80 via-black/40 to-transparent
+            bg-gradient-to-t from-black/20 via-black/50 to-black/80
             mix-blend-multiply
           "
         />
@@ -64,15 +52,6 @@ export function SectionCinematicReveal({
           style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
           }}
-        />
-
-        {/* SUBTLE HIGHLIGHT */}
-        <div
-          className="
-            absolute top-0 w-full h-20
-            bg-gradient-to-b from-white/10 to-transparent
-            opacity-10
-          "
         />
       </motion.div>
     </div>
