@@ -116,36 +116,35 @@ export function Hero() {
         </div>
 
         {/* Right: Text Section */}
-        <div className="flex w-full flex-col gap-[5rem] md:gap-2 lg:w-1/2">
+        <div className="flex w-full flex-col gap-[2rem]  lg:w-1/2">
           <div className="flex w-full flex-col lg:max-w-[70%] ">
             {/**year text tansition  */}
             <div className="flex flex-row gap-2 items-baseline text-[0.8rem] ">
               <span className="">*</span>
 
-              <span className="flex items-baseline text-[12px] leading-none font-bold ">
+              <span className="flex items-baseline text-[12px] leading-none font-bold font-body">
                 202 <AnimatedDigit finalDigit={5} />
               </span>
 
               <span className="">*</span>
             </div>
 
-            <h1 className="font-headline text-mobile-h1 leading-none text-[#29261f] md:text-tablet-h1 lg:text-h1 lg:max-w-[30%]">
+            <h1 className="font-headline text-mobile-h1 leading-none text-[#29261f] md:text-tablet-h1 lg:text-h1 lg:max-w-[30%] tracking-tighter">
               UI/UX DESIGNER
             </h1>
 
-            <span className="text-[12px] text-end w-full">
+            <span className="text-[12px] text-end w-full font-body">
               * BASED IN SRI LANKA *
             </span>
           </div>
 
-          <div className="flex flex-col items-start gap-4 md:max-w-[95%]">
+          <div className="flex flex-col items-start  md:max-w-[95%]">
             <h2 className="font-body text-mobile-body leading-tight text-foreground md:text-body">
-              Doing right by those who trust us isn't a strategy — it's the only
-              way we know how to work.
+            Hi, I’m Kavi. I design intuitive and engaging digital experiences that don’t just look good, but speak to users, making every interaction meaningful and memorable.
             </h2>
             <div className="pt-4">
               <Button asChild>
-                <Link href="#works">VIEW WORKS</Link>
+                <Link href="#works">View works</Link>
               </Button>
             </div>
           </div>
