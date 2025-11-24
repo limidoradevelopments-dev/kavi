@@ -4,6 +4,7 @@ import { Marquee } from '@/components/marquee';
 import { AboutStory } from '@/components/about-story';
 import { SectionCinematicReveal } from '@/components/section-cinematic-reveal';
 import { SelectedWorks } from '@/components/selected-works';
+import { WorksCTA } from '@/components/works-cta';
 
 export default function Home() {
   return (
@@ -18,6 +19,7 @@ export default function Home() {
           <AboutStory />
         </SectionCinematicReveal>
         <SelectedWorks />
+        <WorksCTA />
       </main>
     </div>
   );

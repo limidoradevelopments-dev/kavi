@@ -7,11 +7,11 @@ export function SelectedWorks() {
   return (
     <section
       id="selected-works"
-      className="w-full bg-background py-16 md:py-20 lg:py-24"
+      className="w-full bg-background "
     >
       <div>
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row justify-between items-start py-5 px-4 bg-black/90">
+        <div className="flex flex-col md:flex-row justify-between items-start py-7 px-4 bg-black/90">
           {/* Left Column */}
           <div className="flex flex-col mb-8 md:mb-0">
             <p className="text-[12px] font-body tracking-[0.2em] mb-4 text-white">
