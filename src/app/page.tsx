@@ -9,7 +9,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       <Header />
       <main className="flex-1">
-        <SectionCinematicReveal nextSectionId="about-story">
+        <SectionCinematicReveal>
           <Hero />
           <Marquee />
         </SectionCinematicReveal>

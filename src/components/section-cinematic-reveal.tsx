@@ -5,29 +5,21 @@ import React, { useRef } from "react";
 
 export function SectionCinematicReveal({
   children,
-  nextSectionId,
 }: {
   children: React.ReactNode;
-  nextSectionId: string;
 }) {
   const sectionRef = useRef<HTMLDivElement | null>(null);
-  const nextSectionRef = useRef<HTMLElement | null>(null);
 
-  // Get reference to the next section
-  React.useEffect(() => {
-    nextSectionRef.current = document.getElementById(nextSectionId);
-  }, [nextSectionId]);
-
-  // Track scroll of the NEXT section relative to THIS section
+  // Track scroll of THIS section
   const { scrollYProgress } = useScroll({
-    target: nextSectionRef,
-    offset: ["start 60vh", "start 20vh"],
+    target: sectionRef,
+    offset: ["start end", "end end"],
   });
 
   // Smooth cinematic transitions
-  const opacity = useTransform(scrollYProgress, [0, 1], [0, 1]);
-  const blur = useTransform(scrollYProgress, [0, 1], [0, 10]);
-  const y = useTransform(scrollYProgress, [0, 1], [0, -10]);
+  const opacity = useTransform(scrollYProgress, [0.7, 1], [0, 1]);
+  const blur = useTransform(scrollYProgress, [0.7, 1], [0, 10]);
+  const y = useTransform(scrollYProgress, [0.7, 1], [0, 10]);
 
   return (
     <div ref={sectionRef} className="relative w-full">
@@ -36,7 +28,7 @@ export function SectionCinematicReveal({
 
       {/* CINEMATIC OVERLAY INSIDE THIS SECTION */}
       <motion.div
-        className="absolute top-0 left-0 w-full h-[45vh] pointer-events-none z-40"
+        className="absolute bottom-0 left-0 w-full h-[45vh] pointer-events-none z-40"
         style={{
           opacity,
           y,
@@ -51,9 +43,9 @@ export function SectionCinematicReveal({
             WebkitBackdropFilter: `blur(${blur.get()}px)`,
             background: "rgba(0,0,0,0.05)",
             maskImage:
-              "linear-gradient(to bottom, black 15%, transparent 100%)",
+              "linear-gradient(to top, black 15%, transparent 100%)",
             WebkitMaskImage:
-              "linear-gradient(to bottom, black 15%, transparent 100%)",
+              "linear-gradient(to top, black 15%, transparent 100%)",
           }}
         />
 
@@ -61,7 +53,7 @@ export function SectionCinematicReveal({
         <div
           className="
             absolute inset-0
-            bg-gradient-to-b from-black/80 via-black/40 to-transparent
+            bg-gradient-to-t from-black/80 via-black/40 to-transparent
             mix-blend-multiply
           "
         />
@@ -77,8 +69,8 @@ export function SectionCinematicReveal({
         {/* SUBTLE HIGHLIGHT */}
         <div
           className="
-            absolute bottom-0 w-full h-20
-            bg-gradient-to-t from-white/10 to-transparent
+            absolute top-0 w-full h-20
+            bg-gradient-to-b from-white/10 to-transparent
             opacity-10
           "
         />
