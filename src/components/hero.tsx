@@ -133,7 +133,7 @@ export function Hero() {
               UI/UX DESIGNER
             </h1>
 
-            <span className="text-[12px] text-end w-full font-body">
+            <span className="text-end w-full text-[12px] font-body tracking-[0.2em] text-foreground/80">
               * BASED IN SRI LANKA *
             </span>
           </div>
