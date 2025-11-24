@@ -16,9 +16,9 @@ export function SectionCinematicReveal({
     offset: ["start end", "end end"],
   });
 
-  // Smooth cinematic transitions
+  // Smooth cinematic transitions, activating in the last 30% of the scroll
   const opacity = useTransform(scrollYProgress, [0.7, 1], [0, 1]);
-  const blur = useTransform(scrollYProgress, [0.7, 1], [10, 0]);
+  const blur = useTransform(scrollYProgress, [0.7, 1], [0, 10]);
   const y = useTransform(scrollYProgress, [0.7, 1], [10, 0]);
 
   return (
