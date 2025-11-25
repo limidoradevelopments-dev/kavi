@@ -135,22 +135,13 @@
     opacity: 0.8;
     z-index: 111;
   }
-
-  .marquee-track {
-    display: inline-flex;
-    gap: 53px;
-    white-space: nowrap;
-    will-change: transform;
-    animation: marquee 18s linear infinite;
-    padding-right: 53px;
-  }
   
   @keyframes marquee {
-    0% {
+    from {
       transform: translateX(0);
     }
-    100% {
-      transform: translateX(-50%);
+    to {
+      transform: translateX(-100%);
     }
   }
   
