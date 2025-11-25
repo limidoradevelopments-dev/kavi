@@ -5,10 +5,16 @@ export function AboutStory() {
   return (
     <section
       id="about-story"
-      className="w-full py-16 md:py-20 lg:py-24 flex items-center justify-center bg-background min-h-screen h-full"
+      className="w-full py-10 md:py-12 lg:py-16 flex items-center justify-center bg-background min-h-screen h-full"
     >
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+        <div className="relative flex flex-col items-center text-center max-w-4xl mx-auto">
+          {/* Top Decoration */}
+          <div className="absolute -top-32 flex flex-col items-center">
+            <div className="w-px h-24 bg-foreground/30"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-foreground/40 mt-1"></div>
+          </div>
+          
           <p className="text-[12px] font-body tracking-[0.2em] mb-6 text-foreground/80">
             * ALWAYS INSIDE MY MIND *
           </p>
