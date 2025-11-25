@@ -19,7 +19,7 @@ export default function Home() {
           <AboutStory />
         </SectionCinematicReveal>
         <SelectedWorks />
-        <WorksCTA />
+     
       </main>
     </div>
   );

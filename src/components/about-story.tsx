@@ -12,7 +12,7 @@ export function AboutStory() {
           <p className="text-[12px] font-body tracking-[0.2em] mb-6 text-foreground/80">
             * ALWAYS INSIDE MY MIND *
           </p>
-          <h2 className="font-headline text-mobile-h2 md:text-tablet-h2 lg:text-h2 leading-tight text-foreground/90">
+          <h2 className="font-headline text-mobile-h2 md:text-tablet-h2 lg:text-h2 tracking-tighter text-foreground/90">
             Hi I'm Kavi.. Doing right by those who trust us isn't a{' '}
             <span className="inline-flex items-center">
               <span className="font-bold text-black/80">strategy</span>

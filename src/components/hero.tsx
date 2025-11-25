@@ -48,7 +48,7 @@ function AnimatedDigit({ finalDigit }: { finalDigit: number }) {
 
   // Trigger the animation on mount
   useEffect(() => {
-    y.set(targetY);
+    y.set(targetY);git 
   }, [targetY, y]);
 
   return (
@@ -95,7 +95,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="overflow-hidden relative w-full py-8 pt-[6rem] h-full min-h-screen flex items-center justify-between"
+      className="overflow-hidden relative w-full py-8  h-full min-h-screen flex items-center justify-between"
     >
       <div className="flex flex-col items-start justify-between gap-8 px-4 lg:flex-row lg:px-8">
         {/* Left: Image Section */}
@@ -139,9 +139,9 @@ export function Hero() {
           </div>
 
           <div className="flex flex-col items-start  md:max-w-[95%]">
-            <h2 className="font-body text-mobile-body text-foreground md:text-body leading-[1.35]">
+            <p className="font-body text-mobile-body text-foreground md:text-body leading-[1.35]">
             Hi, I’m Kavi. I design intuitive and engaging digital experiences that don’t just look good, but speak to users, making every interaction meaningful and memorable.
-            </h2>
+            </p>
             <div className="pt-4">
               <Button asChild>
                 <Link href="#works">View works</Link>

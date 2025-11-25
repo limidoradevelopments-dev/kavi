@@ -29,7 +29,7 @@ export function WorksCTA() {
             Doing right by those who trust us isn't a strategy — it's the only
             way we know how to work.
           </h2>
-          <Button asChild variant="default" size="lg" className="bg-black/80 hover:bg-black text-white">
+          <Button asChild variant="default"  className="bg-black/80 hover:bg-black text-white">
             <Link href="/works">VIEW WORKS</Link>
           </Button>
         </div>
@@ -42,7 +42,7 @@ export function WorksCTA() {
           alt="A collage of various design projects"
           width={1200}
           height={600}
-          className="w-full max-w-6xl h-auto [filter:drop-shadow(0_-10px_25px_rgba(0,0,0,0.05))]"
+          className="w-full max-w-6xl h-auto [filter:drop-shadow(0_-15px_25px_rgba(0,0,0,0.05))]"
         />
       </div>
     </section>
