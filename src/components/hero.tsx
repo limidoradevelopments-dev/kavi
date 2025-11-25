@@ -48,7 +48,7 @@ function AnimatedDigit({ finalDigit }: { finalDigit: number }) {
 
   // Trigger the animation on mount
   useEffect(() => {
-    y.set(targetY);git 
+    y.set(targetY);
   }, [targetY, y]);
 
   return (
