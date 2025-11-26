@@ -3,7 +3,6 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
 import { Button } from './ui/button';
 
 export function Header() {
@@ -16,7 +15,7 @@ export function Header() {
         timeZone: 'Asia/Colombo',
         hour: '2-digit',
         minute: '2-digit',
-        hour12: true,
+        hour12: false,
       });
       setTime(timeString);
     };
@@ -47,7 +46,7 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-2">
             <div className="w-px h-16 bg-foreground/10 origin-center" />
             <p className="text-[12px] text-black/50 font-body leading-tight whitespace-nowrap">
-              {time ? `${time} (GMT+5:30)` : 'Loading...'}
+              {time ? time : 'Loading...'}
             </p>
           </div>
         </div>
