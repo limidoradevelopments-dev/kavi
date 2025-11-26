@@ -49,9 +49,14 @@ export function Header() {
           <div className="hidden lg:flex items-center gap-2">
             <div className="w-px h-16 bg-foreground/10 origin-center" />
             {hours && minutes ? (
-              <div className="flex flex-col text-[12px] text-black/50 font-body leading-tight">
-                <span>{hours}</span>
-                <span>{minutes}</span>
+              <div className="flex items-center text-[12px] text-black/50 font-body leading-tight">
+                <div className="flex flex-col">
+                  <span>{hours}</span>
+                  <span>{minutes}</span>
+                </div>
+                <div className="flex flex-col items-center h-full">
+                  <span className="font-bold text-black/50 -ml-1 -mr-1">:</span>
+                </div>
               </div>
             ) : (
               <p className="text-[12px] text-black/50 font-body leading-tight">
