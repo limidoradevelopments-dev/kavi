@@ -4,10 +4,13 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Button } from './ui/button';
+import { NavigationMenu } from './navigation-menu';
+import { AnimatePresence } from 'framer-motion';
 
 export function Header() {
   const [hours, setHours] = useState('');
   const [minutes, setMinutes] = useState('');
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const updateClock = () => {
@@ -29,60 +32,72 @@ export function Header() {
     return () => clearInterval(intervalId);
   }, []);
 
-  return (
-    <header className="fixed top-0 left-0 z-50 w-full grid grid-cols-2 items-center justify-between px-4 sm:px-6 lg:px-8">
-      {/* LEFT — Logo and time */}
-      <div className="flex justify-start w-full items-center relative h-[3.5rem]">
-        <div className="absolute left-0 flex items-center gap-4">
-          {/* Logo */}
-          <Link href="/" aria-label="Home">
-            <Image
-              width={40}
-              height={40}
-              className="w-[2.6rem] h-[2.6rem]"
-              alt="Logo"
-              src="/logo.png"
-            />
-          </Link>
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
 
-          {/* Time */}
-          <div className="hidden lg:flex items-center gap-2">
-            <div className="w-px h-16 bg-foreground/10 origin-center" />
-            {hours && minutes ? (
-              <div className="flex items-center text-[12px] text-black/50 font-body leading-tight">
-                <div className="flex flex-col">
-                  <span>{hours}</span>
-                  <span>{minutes}</span>
+  return (
+    <>
+      <header className="fixed top-0 left-0 z-[100] w-full grid grid-cols-2 items-center justify-between px-4 sm:px-6 lg:px-8">
+        {/* LEFT — Logo and time */}
+        <div className="flex justify-start w-full items-center relative h-[3.5rem]">
+          <div className="absolute left-0 flex items-center gap-4">
+            {/* Logo */}
+            <Link href="/" aria-label="Home">
+              <Image
+                width={40}
+                height={40}
+                className="w-[2.6rem] h-[2.6rem]"
+                alt="Logo"
+                src="/logo.png"
+              />
+            </Link>
+
+            {/* Time */}
+            <div className="hidden lg:flex items-center gap-2">
+              <div className="w-px h-16 bg-foreground/10 origin-center" />
+              {hours && minutes ? (
+                <div className="flex items-center text-body text-black/50 font-body leading-none">
+                  <div className="flex flex-col">
+                    <span>{hours}</span>
+                    <div className="flex flex-row items-center h-full justify-center">
+                      <span className=" text-black/50 leading-[0.5] tracking-tighter">
+                        &#x2022; &#x2022;
+                      </span>
+                    </div>
+                    <span>{minutes}</span>
+                  </div>
                 </div>
-                <div className="flex flex-col items-center h-full">
-                  <span className="font-bold text-black/50 -ml-1 -mr-1">:</span>
-                </div>
-              </div>
-            ) : (
-              <p className="text-[12px] text-black/50 font-body leading-tight">
-                --:--
-              </p>
-            )}
+              ) : (
+                <p className="text-body text-black/50 font-body leading-tight">
+                  --:--
+                </p>
+              )}
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* RIGHT — Hamburger */}
-      <div className="flex justify-end">
-        <Button
-          variant="ghost"
-          size="icon"
-          className="w-9 h-auto p-0 rounded-none"
-        >
-          <Image
-            src="/hamburger.svg"
-            alt="Menu"
-            width={32}
-            height={32}
-            className="scale-[2]"
-          />
-        </Button>
-      </div>
-    </header>
+        {/* RIGHT — Hamburger */}
+        <div className="flex justify-end">
+          <Button
+            variant="ghost"
+            size="icon"
+            className="w-9 h-auto p-0 rounded-none"
+            onClick={toggleMenu}
+          >
+            <Image
+              src={isMenuOpen ? '/close.svg' : '/hamburger.svg'}
+              alt="Menu"
+              width={32}
+              height={32}
+              className="scale-[2]"
+            />
+          </Button>
+        </div>
+      </header>
+      <AnimatePresence>
+        {isMenuOpen && <NavigationMenu onClose={toggleMenu} />}
+      </AnimatePresence>
+    </>
   );
 }
