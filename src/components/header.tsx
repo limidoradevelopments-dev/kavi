@@ -6,7 +6,8 @@ import Image from 'next/image';
 import { Button } from './ui/button';
 
 export function Header() {
-  const [time, setTime] = useState('');
+  const [hours, setHours] = useState('');
+  const [minutes, setMinutes] = useState('');
 
   useEffect(() => {
     const updateClock = () => {
@@ -17,7 +18,9 @@ export function Header() {
         minute: '2-digit',
         hour12: false,
       });
-      setTime(timeString);
+      const [h, m] = timeString.split(':');
+      setHours(h);
+      setMinutes(m);
     };
 
     updateClock();
@@ -45,9 +48,16 @@ export function Header() {
           {/* Time */}
           <div className="hidden lg:flex items-center gap-2">
             <div className="w-px h-16 bg-foreground/10 origin-center" />
-            <p className="text-[12px] text-black/50 font-body leading-tight whitespace-nowrap">
-              {time ? time : 'Loading...'}
-            </p>
+            {hours && minutes ? (
+              <div className="flex flex-col text-[12px] text-black/50 font-body leading-tight">
+                <span>{hours}</span>
+                <span>{minutes}</span>
+              </div>
+            ) : (
+              <p className="text-[12px] text-black/50 font-body leading-tight">
+                --:--
+              </p>
+            )}
           </div>
         </div>
       </div>
