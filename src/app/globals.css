@@ -6,7 +6,7 @@
   @font-face {
     font-family: 'Boska';
     src: url('/fonts/Boska-Medium.woff2') format('woff2');
-    font-weight: normal;
+    font-weight: 500;
     font-style: normal;
     font-display: swap;
   }
@@ -14,8 +14,8 @@
   @font-face {
     font-family: 'Switzer';
     src: url('/fonts/Switzer-Light.woff2') format('woff2');
-    font-weight: 100;
-    font-style: light;
+    font-weight: 300;
+    font-style: normal;
     font-display: swap;
 
   }

@@ -21,7 +21,7 @@ const Symbol = ({ className }: { className?: string }) => (
 
 const MarqueeItem = () => (
   <div className="flex-shrink-0 flex items-center gap-4 px-6">
-    <Symbol className="w-10 h-10 md:w-12 md:h-12" />
+    <Symbol className="w-14 h-14" />
 
     {marqueeItems.map((item, index) => (
       <React.Fragment key={item}>
@@ -30,7 +30,7 @@ const MarqueeItem = () => (
         </span>
 
         {index !== marqueeItems.length - 1 && (
-        <Symbol className="w-10 h-10 md:w-12 md:h-12" />
+        <Symbol className="w-14 h-14" />
         )}
       </React.Fragment>
     ))}
@@ -39,7 +39,7 @@ const MarqueeItem = () => (
 
 export function Marquee() {
   return (
-    <section className="relative w-full overflow-hidden bg-black/90 py-3 mt-4">
+    <section className="relative w-full overflow-hidden bg-black/90 py-1 mt-4">
       <div className="flex animate-marquee whitespace-nowrap">
         <MarqueeItem />
         <MarqueeItem />

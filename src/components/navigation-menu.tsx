@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { motion, Variants } from 'framer-motion';
 
@@ -42,6 +42,13 @@ const itemVars: Variants = {
 };
 
 export function NavigationMenu({ onClose }: { onClose: () => void }) {
+  const [time, setTime] = useState('');
+
+  useEffect(() => {
+    setTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+  }, []);
+
+
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('#')) {
       e.preventDefault();
@@ -104,8 +111,7 @@ export function NavigationMenu({ onClose }: { onClose: () => void }) {
                 <p>PERFECTION ISN'T ABOUT BEING FLAWLESS—IT'S</p>
               </div>
               <div className="mt-2 lg:mt-0">
-                {/* Dynamic time could go here, relying on static for now */}
-                <p>{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</p>
+                <p>{time}</p>
               </div>
             </div>
 
