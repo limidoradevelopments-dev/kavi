@@ -9,28 +9,37 @@ const marqueeItems = [
   "GRAPHIC DESIGN",
 ];
 
+// Reusable symbol component
+const Symbol = ({ className }: { className?: string }) => (
+  <span
+    className={cn(
+      "inline-block bg-[url('/symbol-decoration.svg')] bg-contain bg-center bg-no-repeat",
+      className
+    )}
+  />
+);
+
 const MarqueeItem = () => (
-  <div className="flex-shrink-0 flex items-center gap-2.5 px-4">
-    <span className="w-5 h-5 bg-[url('/symbol-decoration.svg')] bg-contain bg-center bg-no-repeat" />
-    <span className="font-headline text-mobile-h4 md:text-h5 text-white whitespace-nowrap">
-      {marqueeItems[0]}
-    </span>
-    <span className="w-5 h-5 bg-[url('/symbol-decoration.svg')] bg-contain bg-center bg-no-repeat" />
-    <span className="font-headline text-mobile-h4 md:text-h5 text-white whitespace-nowrap ml-4">
-      {marqueeItems[1]}
-    </span>
-    <span className="w-5 h-5 bg-[url('/symbol-decoration.svg')] bg-contain bg-center bg-no-repeat ml-4" />
-    <span className="font-headline text-mobile-h4 md:text-h5 text-white whitespace-nowrap">
-      {marqueeItems[2]}
-    </span>
-    <span className="w-5 h-5 bg-[url('/symbol-decoration.svg')] bg-contain bg-center bg-no-repeat ml-4" />
+  <div className="flex-shrink-0 flex items-center gap-4 px-6">
+    <Symbol className="w-10 h-10 md:w-12 md:h-12" />
+
+    {marqueeItems.map((item, index) => (
+      <React.Fragment key={item}>
+        <span className="font-headline text-mobile-h4 md:text-h5 text-white whitespace-nowrap">
+          {item}
+        </span>
+
+        {index !== marqueeItems.length - 1 && (
+        <Symbol className="w-10 h-10 md:w-12 md:h-12" />
+        )}
+      </React.Fragment>
+    ))}
   </div>
 );
 
-
 export function Marquee() {
   return (
-    <section className="relative w-full overflow-hidden bg-black/90 py-3 lg:py-5 mt-4">
+    <section className="relative w-full overflow-hidden bg-black/90 py-3 mt-4">
       <div className="flex animate-marquee whitespace-nowrap">
         <MarqueeItem />
         <MarqueeItem />

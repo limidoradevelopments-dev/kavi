@@ -11,12 +11,12 @@ export default {
     extend: {
       fontSize: {
         h1: '5.5rem',
-        h2: '3.5rem',
+        h2: '3.1rem',
         h3: '2.5rem',
         h4: '1.75rem',
         h5: '1.35rem',
         body: '1rem',
-        button: '0.5rem',
+        button: '0.8rem',
         
         // TABLET 
         'tablet-h1': '4.4rem',
