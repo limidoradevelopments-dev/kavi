@@ -25,7 +25,7 @@ const MarqueeItem = () => (
 
     {marqueeItems.map((item, index) => (
       <React.Fragment key={item}>
-        <span className="font-headline text-mobile-h4 md:text-h5 text-white whitespace-nowrap">
+        <span className="font-headline-italic text-mobile-h4 md:text-h5 text-white whitespace-nowrap">
           {item}
         </span>
 

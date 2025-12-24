@@ -39,6 +39,7 @@ export default {
       fontFamily: {
         body: ['Switzer', 'sans-serif'],
         headline: ['Boska', 'serif'],
+        'headline-italic': ['Boska-Italic', 'serif'],
         button: ['Switzer', 'sans-serif'],
         code: ['monospace'],
       },
