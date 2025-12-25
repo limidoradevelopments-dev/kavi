@@ -157,16 +157,7 @@
     to { transform: translateX(-50%); }
   }
   
-  /* Optional polish */
-  .marquee-track:hover {
-    animation-play-state: paused;
-  }
-  
-  @media (prefers-reduced-motion: reduce) {
-    .marquee-track {
-      animation: none;
-    }
-  }
+ 
   
   
  

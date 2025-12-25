@@ -43,11 +43,11 @@ const MarqueeContent = () => {
 
       {/* Center */}
       <div className="flex items-center gap-6">
-        <Symbol variant="hero-left" className="w-[5rem] h-[4rem]" />
+        <Symbol variant="hero-left" className="w-[5rem] h-[3.5rem]" />
         <span className="font-headline-italic text-mobile-h4 md:text-h5 text-white whitespace-nowrap">
           Trust the fucking process
         </span>
-        <Symbol variant="hero-right" className="w-[5rem] h-[4rem]" />
+        <Symbol variant="hero-right" className="w-[5rem] h-[3.5rem]" />
       </div>
 
       {/* Right */}
@@ -55,7 +55,7 @@ const MarqueeContent = () => {
         <span className="font-headline-italic text-mobile-h4 md:text-h5 text-white whitespace-nowrap">
           To find perfection
         </span>
-        <Symbol variant="small" className="w-10 h-10" />
+        <Symbol variant="small" className="w-[2rem] h-[2rem]" />
       </div>
     </div>
   );
