@@ -13,7 +13,7 @@
 
   @font-face {
     font-family: 'Boska-Italic';
-    src: url('/Boska-MediumItalic.woff2') format('woff2');
+    src: url('/fonts/Boska-MediumItalic.woff2') format('woff2');
     font-weight: 500;
     font-style: italic;
     font-display: swap;
@@ -29,15 +29,18 @@
   }
 
   html {
-    font-size: 20px;
-  }
+  font-size: max(
+    16px,
+    calc(18.8px + (100vw - 1440px) * 0.014)
+  );
+}
 
   h2{
     line-height: 1.1 !important;
   }
   :root {
     --background: 0 0% 71%;
-    --foreground: 40 4% 24%;
+    --foreground: 20 4% 24%;
     --card: 0 0% 99%;
     --card-foreground: 40 4% 24%;
     --popover: 0 0% 99%;

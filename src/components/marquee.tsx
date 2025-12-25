@@ -4,9 +4,9 @@ import React from "react";
 import { cn } from "@/lib/utils";
 
 const marqueeItems = [
-  "UI/UX DESIGN",
-  "WEB DESIGN",
-  "GRAPHIC DESIGN",
+  "UI / UI Design",
+  "Builing your next level Idea",
+  "Trust the Fucking Process",
 ];
 
 // Reusable symbol component
@@ -20,7 +20,7 @@ const Symbol = ({ className }: { className?: string }) => (
 );
 
 const MarqueeItem = () => (
-  <div className="flex-shrink-0 flex items-center gap-4 px-6">
+  <div className="flex-shrink-0 flex items-center gap-8 px-6">
     <Symbol className="w-14 h-14" />
 
     {marqueeItems.map((item, index) => (
@@ -40,7 +40,7 @@ const MarqueeItem = () => (
 export function Marquee() {
   return (
     <section className="relative w-full overflow-hidden bg-black/90 py-1 mt-4">
-      <div className="flex animate-marquee whitespace-nowrap">
+      <div className="flex animate-marquee whitespace-nowrap gap-6">
         <MarqueeItem />
         <MarqueeItem />
       </div>

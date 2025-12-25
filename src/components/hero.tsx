@@ -95,7 +95,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="overflow-hidden relative w-full py-8  h-full min-h-screen flex items-center justify-between"
+      className="overflow-hidden relative w-full py-8  h-full min-h-screen flex items-center justify-between w-full"
     >
       <div className="flex flex-col items-start justify-between gap-8 px-4 lg:flex-row lg:px-8">
         {/* Left: Image Section */}
