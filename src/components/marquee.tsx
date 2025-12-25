@@ -3,46 +3,77 @@
 import React from "react";
 import { cn } from "@/lib/utils";
 
-const marqueeItems = [
-  "UI / UI Design",
-  "Builing your next level Idea",
-  "Trust the Fucking Process",
-];
+/* ---------------------------------
+   Symbol Component
+---------------------------------- */
+type SymbolProps = {
+  variant: "hero-left" | "hero-right" | "small";
+  className?: string;
+};
 
-// Reusable symbol component
-const Symbol = ({ className }: { className?: string }) => (
+const symbolMap = {
+  "hero-left": "/marquee-symbol-2.svg",
+  "hero-right": "/marquee-symbol-1.svg",
+  small: "/marquee-symbol-small.svg",
+};
+
+const Symbol = ({ variant, className }: SymbolProps) => (
   <span
+    aria-hidden
     className={cn(
-      "inline-block bg-[url('/symbol-decoration.svg')] bg-contain bg-center bg-no-repeat",
+      "inline-block bg-center bg-no-repeat bg-contain",
       className
     )}
+    style={{
+      backgroundImage: `url(${symbolMap[variant]})`,
+    }}
   />
 );
 
-const MarqueeItem = () => (
-  <div className="flex-shrink-0 flex items-center gap-8 px-6">
-    <Symbol className="w-14 h-14" />
-
-    {marqueeItems.map((item, index) => (
-      <React.Fragment key={item}>
+/* ---------------------------------
+   Marquee Content
+---------------------------------- */
+const MarqueeContent = () => {
+  return (
+    <div className="flex shrink-0 items-center gap-10 px-8">
+      {/* Left text */}
+      <div className="flex items-center gap-6">
         <span className="font-headline-italic text-mobile-h4 md:text-h5 text-white whitespace-nowrap">
-          {item}
+          Deep nested Web
+        </span>
+      </div>
+
+      {/* Center hero text */}
+      <div className="flex items-center gap-8">
+        <Symbol variant="hero-left" className="w-[5rem] h-[4rem]" />
+
+        <span className="font-headline-italic text-mobile-h4 md:text-h5 text-white whitespace-nowrap">
+          Trust the fucking process
         </span>
 
-        {index !== marqueeItems.length - 1 && (
-        <Symbol className="w-14 h-14" />
-        )}
-      </React.Fragment>
-    ))}
-  </div>
-);
+        <Symbol variant="hero-right" className="w-[5rem] h-[4rem]" />
+      </div>
 
+      {/* Right text */}
+      <div className="flex items-center gap-6">
+        <span className="font-headline-italic text-mobile-h4 md:text-h5 text-white whitespace-nowrap">
+          The way to find perfection
+        </span>
+        <Symbol variant="small" className="w-10 h-10" />
+      </div>
+    </div>
+  );
+};
+
+/* ---------------------------------
+   Marquee Wrapper
+---------------------------------- */
 export function Marquee() {
   return (
-    <section className="relative w-full overflow-hidden bg-black/90 py-1 mt-4">
-      <div className="flex animate-marquee whitespace-nowrap gap-6">
-        <MarqueeItem />
-        <MarqueeItem />
+    <section className="relative w-full overflow-hidden bg-black/90 mt-4">
+      <div className="flex animate-marquee whitespace-nowrap">
+        <MarqueeContent />
+        <MarqueeContent />
       </div>
     </section>
   );
