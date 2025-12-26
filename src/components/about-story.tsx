@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 const StoryItem = ({ number, children }: { number: string; children: React.ReactNode }) => (
-  <div className="relative flex items-start gap-6">
+  <div className="relative flex flex-col items-start gap-6">
     <div className="flex flex-col items-center gap-4">
       <span className="font-headline text-3xl text-foreground/20 leading-none mt-1 line-through">
         {number}
