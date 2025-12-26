@@ -10,10 +10,6 @@ const StoryItem = ({ number, children }: { number: string; children: React.React
       <div className="w-px flex-1 bg-foreground/20" />
     </div>
     <div className="flex flex-col pt-4">
-      <div className="flex items-center gap-4 mb-4">
-        <div className="w-4 h-px bg-foreground/20" />
-        <span className="text-foreground/80 transform -rotate-90 text-2xl">+</span>
-      </div>
       <p className="text-mobile-body md:text-body text-foreground/80 max-w-sm">
         {children}
       </p>
