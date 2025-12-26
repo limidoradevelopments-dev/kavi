@@ -4,8 +4,8 @@ import { Toaster } from '@/components/ui/toaster';
 import { SmoothScroll } from '@/components/smooth-scroll';
 
 export const metadata: Metadata = {
-  title: 'FolioFlow',
-  description: 'A personal portfolio created with Next.js and Firebase Studio.',
+  title: 'Kavi',
+  description: 'I’m a UI/UX Designer Creating next level web experience for you',
 };
 
 export default function RootLayout({
