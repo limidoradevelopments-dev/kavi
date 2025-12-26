@@ -15,9 +15,7 @@ export default function Home() {
           <Hero />
           <Marquee />
         </SectionCinematicReveal>
-        <SectionCinematicReveal>
           <AboutStory />
-        </SectionCinematicReveal>
         <SelectedWorks />
         <ContactSection />
       </main>
