@@ -2,14 +2,14 @@ import React from 'react';
 import Image from 'next/image';
 
 const StoryItem = ({ number, children }: { number: string; children: React.ReactNode }) => (
-  <div className="relative flex flex-col items-start gap-6">
-    <div className="flex flex-col items-center gap-4">
+  <div className="relative flex flex-col items-start gap-2">
+    <div className="flex flex-col items-center gap-2">
       <span className="font-headline text-3xl text-foreground/20 leading-none mt-1 line-through">
         {number}
       </span>
       <div className="w-px flex-1 bg-foreground/20" />
     </div>
-    <div className="flex flex-col pt-4">
+    <div className="flex flex-col ">
       <p className="text-mobile-body md:text-body text-foreground/80 max-w-sm">
         {children}
       </p>
@@ -46,7 +46,7 @@ export function AboutStory() {
             </h2>
 
             <h2 className=" col-start-2 col-span-9 font-headline text-mobile-h2 md:text-tablet-h2 lg:text-[2.8rem] leading-tight tracking-tighter text-foreground/90 text-start">
-              It communicates with people in a creative way. 
+              It communicates with people in a <span className='italic '>creative</span> way. 
             </h2>
 
             <h2 className=" col-start-2 col-span-10 font-headline text-mobile-h2 md:text-tablet-h2 lg:text-[2.8rem] leading-tight tracking-tighter text-foreground/90 text-end">
