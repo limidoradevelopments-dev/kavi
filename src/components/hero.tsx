@@ -101,7 +101,7 @@ export function Hero() {
         {/* Left: Image Section */}
         <div className="relative flex w-full items-center justify-center lg:w-1/2">
           <div className="relative w-full lg:max-w-[95vw] lg:min-h-[75vh] md:aspect-[4/3] lg:w-full aspect-[4/4]">
-            <PixelatedImage
+          <PixelatedImage
               images={['/hero-image.png', '/hero-image-2.png']}
               className="object-contain"
             />

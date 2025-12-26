@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { ThemeProvider } from '@/components/providers/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 import { SmoothScroll } from '@/components/smooth-scroll';
 
@@ -19,10 +18,8 @@ export default function RootLayout({
       <head>
       </head>
       <body className="font-body antialiased">
-        <ThemeProvider storageKey="folioflow-theme">
-          <SmoothScroll>{children}</SmoothScroll>
-          <Toaster />
-        </ThemeProvider>
+        <SmoothScroll>{children}</SmoothScroll>
+        <Toaster />
       </body>
     </html>
   );
