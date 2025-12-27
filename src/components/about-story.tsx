@@ -53,7 +53,7 @@ export function AboutStory() {
       className="relative w-full py-24 md:py-32 lg:py-40 flex items-center justify-center bg-background min-h-screen overflow-hidden"
     >
       {/* ---------- Background GSAP Animated Text ---------- */}
-      <div className="absolute inset-0 flex items-start justify-center pointer-events-none top-[1.5rem] tracking-[1.2rem] line-through">
+      <div className="absolute inset-0 flex items-start justify-center pointer-events-none top-[5.3rem] tracking-[1.2rem] line-through">
         <AnimatedTitle className="font-headline text-[13vw] text-foreground/30 whitespace-nowrap mix-blend-soft-light">
           PERFECTION
         </AnimatedTitle>
@@ -84,28 +84,7 @@ export function AboutStory() {
             </div>
           </div>
 
-          {/* Right Side */}
-          <div className="md:col-span-5 md:col-start-8 flex flex-col gap-12 mt-8 md:mt-0">
-            <div className="relative pt-1">
-              <StarIcon className="absolute top-0 left-0 -translate-y-1/2 -translate-x-full" />
-              <div className="absolute top-0 left-0 w-screen border-t border-foreground/20 mix-blend-soft-light" />
-              <StoryItem number="001">
-                Perfection isn’t about being flawless — it’s about pushing ideas
-                beyond limits. Your next idea can be the one. Why wait?
-              </StoryItem>
-            </div>
-          </div>
-
-          <div className="md:col-span-4 md:col-start-5 flex flex-col gap-12 mt-8 md:mt-0">
-            <div className="relative pt-1">
-              <StarIcon className="absolute top-0 left-0 -translate-y-1/2 -translate-x-full" />
-              <div className="absolute top-0 left-0 w-screen border-t border-foreground/20 mix-blend-soft-light" />
-              <StoryItem number="002">
-                Doing right by those who trust us isn&apos;t a strategy — it&apos;s
-                the only way we know how to work.
-              </StoryItem>
-            </div>
-          </div>
+     
         </div>
       </div>
     </section>
