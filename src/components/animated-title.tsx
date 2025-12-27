@@ -24,7 +24,7 @@ export function AnimatedTitle({ children, className }: AnimatedTitleProps) {
     if (!el) return;
 
     const ctx = gsap.context(() => {
-      const chars = el.querySelectorAll('.at__char');
+      const chars = el.querySelectorAll('.anim-title_char');
       if (!chars.length) return;
 
       gsap.set(chars, {
@@ -63,10 +63,10 @@ export function AnimatedTitle({ children, className }: AnimatedTitleProps) {
       style={{ willChange: 'transform, opacity, filter' }}
     >
       {lines.map((line, i) => (
-        <div key={i} className="at__line">
+        <div key={i} className="anim-title_line">
           {splitLine(line).map((char, j) => (
-            <span key={j} className="at__wrap inline-block overflow-hidden">
-              <span className="at__char inline-block origin-center transform-gpu">
+            <span key={j} className="anim-title_wrap inline-block overflow-hidden">
+              <span className="anim-title_char inline-block origin-center transform-gpu">
                 {char}
               </span>
             </span>
