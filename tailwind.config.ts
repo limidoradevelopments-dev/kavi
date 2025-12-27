@@ -15,7 +15,8 @@ export default {
         h4: '1.75rem',
         h5: '1.35rem',
         body: '1rem',
-        button: '0.8rem',
+        body2: '0.8rem',
+        button: '0.7rem',
         
         // TABLET 
         'tablet-h1': '4.4rem',
