@@ -11,7 +11,7 @@ export function AboutStory() {
   return (
     <section
       id="about-story"
-      className="relative w-full py-24 md:py-32 lg:py-40 flex items-center justify-center bg-background min-h-screen overflow-hidden"
+      className="relative w-full py-24 md:py-32 lg:py-40 flex items-center justify-center bg-background min-h-screen md:h-[120vh] overflow-hidden"
     >
       {/* ---------- Background GSAP Animated Text ---------- */}
       <div className="absolute inset-0 flex items-start justify-center pointer-events-none top-[5.2rem] tracking-[1.2rem] line-through">
@@ -25,7 +25,7 @@ export function AboutStory() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-y-20 gap-x-12 items-start">
           {/* Left Side */}
           <div className="md:col-span-12 flex flex-col items-center text-center w-full">
-            <p className="text-[12px] font-body tracking-[0.2em] mb-8 text-foreground/80">
+            <p className="text-mobile-tagline md:text-tagline font-body tracking-[0.2em] mb-8 text-foreground/80">
               * ALWAYS INSIDE MY MIND *
             </p>
 

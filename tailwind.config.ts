@@ -17,6 +17,7 @@ export default {
         body: '1rem',
         body2: '0.8rem',
         button: '0.7rem',
+        tagline: '0.6rem',
         
         // TABLET 
         'tablet-h1': '4.4rem',
@@ -34,7 +35,8 @@ export default {
         'mobile-h4': '1.32rem',
         'mobile-h5': '1.18rem',
         'mobile-body': '0.95rem',    
-        'mobile-button': '0.7rem' 
+        'mobile-button': '0.7rem',
+        'mobile-tagline': '0.6rem' 
       },
       fontFamily: {
         body: ['Switzer', 'sans-serif'],

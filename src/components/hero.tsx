@@ -16,7 +16,7 @@ import {
 const DIGITS = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 function AnimatedDigit({ finalDigit }: { finalDigit: number }) {
-  const containerHeight = 14; // Corresponds to text-[12px] line-height roughly
+  const containerHeight = 16; // Corresponds to text-[12px] line-height roughly
   const targetY = -finalDigit * containerHeight;
   const filterId = useId(); // Unique ID for the SVG filter
 
@@ -122,7 +122,7 @@ export function Hero() {
             <div className="flex flex-row gap-2 items-baseline text-[0.8rem] ">
               <span className="">*</span>
 
-              <span className="flex items-baseline text-[12px] leading-none font-bold font-body">
+              <span className="flex items-baseline text-mobile-tagline md:text-tagline leading-none font-bold font-body">
                 202 <AnimatedDigit finalDigit={5} />
               </span>
 
@@ -133,7 +133,7 @@ export function Hero() {
               UI/UX DESIGNER
             </h1>
 
-            <span className="text-end w-full text-[12px] font-body tracking-[0.2em] text-foreground/80">
+            <span className="text-end w-full text-mobile-tagline md:text-tagline font-body tracking-[0.2em] text-foreground/80">
               * BASED IN SRI LANKA *
             </span>
           </div>

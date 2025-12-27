@@ -103,7 +103,7 @@ export function NavigationMenu({ onClose }: { onClose: () => void }) {
           {/* Text Content Side (Desktop: Right Side, Mobile: Bottom) */}
           <motion.div 
             variants={itemVars}
-            className="lg:col-span-4 flex flex-col gap-8 lg:gap-12 w-full text-[9px] lg:text-[12px] tracking-widest font-light h-full justify-end"
+            className="lg:col-span-4 flex flex-col gap-8 lg:gap-12 w-full text-mobile-tagline md:text-tagline  tracking-widest font-light h-full justify-end"
           >
             {/* Split Top Text */}
             <div className="flex flex-col lg:flex-row justify-between w-full border-t border-foreground/10 pt-4 lg:border-none lg:pt-0">
