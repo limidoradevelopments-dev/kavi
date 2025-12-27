@@ -66,10 +66,13 @@ export function AboutStory() {
 
           {/* Right Side */}
           <div className="md:col-span-5 md:col-start-8 flex flex-col gap-12 mt-8 md:mt-0">
-            <StoryItem number="001">
-              Perfection isn’t about being flawless — it’s about pushing ideas
-              beyond limits. Your next idea can be the one. Why wait?
-            </StoryItem>
+            <div className="relative pt-8">
+               <div className="absolute top-0 left-0 w-screen border-t border-foreground/20" />
+              <StoryItem number="001">
+                Perfection isn’t about being flawless — it’s about pushing ideas
+                beyond limits. Your next idea can be the one. Why wait?
+              </StoryItem>
+            </div>
           </div>
 
           <div className="md:col-span-4 md:col-start-5 flex flex-col gap-12 mt-8 md:mt-0">
