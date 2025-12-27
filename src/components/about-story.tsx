@@ -73,10 +73,13 @@ export function AboutStory() {
           </div>
 
           <div className="md:col-span-4 md:col-start-5 flex flex-col gap-12 mt-8 md:mt-0">
-            <StoryItem number="002">
-              Doing right by those who trust us isn&apos;t a strategy — it&apos;s
-              the only way we know how to work.
-            </StoryItem>
+            <div className="relative pt-8">
+              <div className="absolute top-0 left-0 w-screen border-t border-foreground/20" />
+              <StoryItem number="002">
+                Doing right by those who trust us isn&apos;t a strategy — it&apos;s
+                the only way we know how to work.
+              </StoryItem>
+            </div>
           </div>
         </div>
       </div>
