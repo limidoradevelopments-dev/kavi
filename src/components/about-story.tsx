@@ -1,14 +1,7 @@
 'use client';
 
-import React, { useMemo, useRef, useLayoutEffect } from 'react';
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
-
-/* ---------------- helpers ---------------- */
-const splitLine = (text: string) =>
-  [...text].map((ch) => (ch === ' ' ? '\u00A0' : ch));
+import React from 'react';
+import { AnimatedTitle } from './animated-title';
 
 /* ---------------- Story Item ---------------- */
 const StoryItem = ({
@@ -34,55 +27,6 @@ const StoryItem = ({
 
 /* ---------------- Page ---------------- */
 export function AboutStory() {
-  const bgTitleRef = useRef<HTMLHeadingElement | null>(null);
-
-  const bgLines = useMemo(() => ['PERFECTION'], []);
-
-  useLayoutEffect(() => {
-    const el = bgTitleRef.current;
-    if (!el) return;
-
-    const ctx = gsap.context(() => {
-      const chars = el.querySelectorAll('.at__char');
-      if (!chars.length) return;
-
-      // 1. Set Initial "Brutal" State
-      gsap.set(chars, {
-        x: '-150%',        // Start much further left for high momentum
-        opacity: 0, 
-             // Extremely heavy tilt (editorial style)
-        filter: 'blur(20px)', // Strong motion blur
-       
-      });
-
-      const tl = gsap.timeline({ paused: true }).to(chars, {
-        // 2. Animate to Final State
-        x: '0%',
-        y: '0%',
-        opacity: 1,
-               // Snap to straight
-        filter: 'blur(0px)',
-     
-        
-        // 3. Timing Configuration for "Brutal" feel
-        ease: 'power4.out', // Very fast impact, sudden stop (heavy feel)
-        stagger: 0.1,       // distinct delay between letters (The "Editorial" beat)
-        duration: 1.5,      // Each letter takes time to settle
-        overwrite: 'auto',
-      });
-
-      ScrollTrigger.create({
-        trigger: el,
-        start: 'top 85%',
-        once: true,
-        invalidateOnRefresh: true,
-        onEnter: () => tl.play(0),
-      });
-    }, el);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
     <section
       id="about-story"
@@ -90,23 +34,9 @@ export function AboutStory() {
     >
       {/* ---------- Background GSAP Animated Text ---------- */}
       <div className="absolute inset-0 flex items-start justify-center pointer-events-none top-[1.5rem] tracking-[1.2rem] line-through">
-        <h2
-          ref={bgTitleRef}
-          className="at font-headline text-[13vw] text-foreground/30 whitespace-nowrap mix-blend-soft-light "
-          style={{ willChange: 'transform, opacity, filter' }}
-        >
-          {bgLines.map((line, i) => (
-            <div key={i} className="at__line">
-              {splitLine(line).map((char, j) => (
-                <span key={j} className="at__wrap inline-block overflow-hidden">
-                  <span className="at__char inline-block origin-center transform-gpu">
-                    {char}
-                  </span>
-                </span>
-              ))}
-            </div>
-          ))}
-        </h2>
+        <AnimatedTitle className="font-headline text-[13vw] text-foreground/30 whitespace-nowrap mix-blend-soft-light">
+          PERFECTION
+        </AnimatedTitle>
       </div>
 
       {/* ---------- Main Content ---------- */}
