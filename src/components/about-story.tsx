@@ -46,13 +46,13 @@ export function AboutStory() {
       const chars = el.querySelectorAll('.at__char');
       if (!chars.length) return;
 
-      // 1. Set Initial Dramatic State
+      // 1. Set Initial "Brutal" State
       gsap.set(chars, {
-        x: '-120%',         // Start further left
-        opacity: 0,         // Start invisible
-        skewX: -30,         // Heavy tilt to simulate speed/drag
-        filter: 'blur(15px)', // Motion blur effect
-        scale: 0.8,         // Slightly smaller initially
+        x: '-150%',        // Start much further left for high momentum
+        opacity: 0, 
+             // Extremely heavy tilt (editorial style)
+        filter: 'blur(20px)', // Strong motion blur
+       
       });
 
       const tl = gsap.timeline({ paused: true }).to(chars, {
@@ -60,14 +60,14 @@ export function AboutStory() {
         x: '0%',
         y: '0%',
         opacity: 1,
-        skewX: 0,           // Straighten up
-        filter: 'blur(0px)', // Remove blur
-        scale: 1,
+               // Snap to straight
+        filter: 'blur(0px)',
+     
         
-        // 3. Timing Configuration
-        ease: 'expo.out',   // "Snappy" easing: fast start, slow elegant stop
-        stagger: 0.04,      // Slightly increased delay between letters
-        duration: 2,        // Long duration allowed by the exponential ease
+        // 3. Timing Configuration for "Brutal" feel
+        ease: 'power4.out', // Very fast impact, sudden stop (heavy feel)
+        stagger: 0.1,       // distinct delay between letters (The "Editorial" beat)
+        duration: 1.5,      // Each letter takes time to settle
         overwrite: 'auto',
       });
 
@@ -89,11 +89,11 @@ export function AboutStory() {
       className="relative w-full py-24 md:py-32 lg:py-40 flex items-center justify-center bg-background min-h-screen overflow-hidden"
     >
       {/* ---------- Background GSAP Animated Text ---------- */}
-      <div className="absolute inset-0 flex items-start justify-center pointer-events-none top-[1.5rem] tracking-[1.2rem]">
+      <div className="absolute inset-0 flex items-start justify-center pointer-events-none top-[1.5rem] tracking-[1.2rem] line-through">
         <h2
           ref={bgTitleRef}
           className="at font-headline text-[13vw] text-foreground/30 whitespace-nowrap mix-blend-soft-light "
-          style={{ willChange: 'transform, opacity, filter' }} // Hint to browser for performance
+          style={{ willChange: 'transform, opacity, filter' }}
         >
           {bgLines.map((line, i) => (
             <div key={i} className="at__line">
