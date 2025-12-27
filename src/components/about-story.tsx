@@ -25,14 +25,16 @@ export function AboutStory() {
       className="relative w-full py-24 md:py-32 lg:py-40 flex items-center justify-center bg-background min-h-screen h-full overflow-hidden"
     >
       {/* Background Text */}
-      <div className="absolute inset-0 flex items-start justify-center pointer-events-none  top-[-3rem]">
-          <h2 className="font-headline text-[13vw] text-foreground/5 whitespace-nowrap">
+      <div className="absolute inset-0 flex items-start justify-center pointer-events-none  top-[-3.5rem] ">
+          <h2 className="font-headline text-[13vw] text-foreground/5 whitespace-nowrap bg-background z-[2] tracking-tighter">
             PERFECTION
           </h2>
       </div>
 
+ 
+
       <div className="mx-auto px-4 z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-y-20 gap-x-12 items-start">
           
           {/* Left Side: Main Heading */}
           <div className="md:col-span-12 flex flex-col items-center text-center md:text-left w-full">
@@ -50,7 +52,7 @@ export function AboutStory() {
             </h2>
 
             <h2 className=" col-start-2 col-span-10 font-headline text-mobile-h2 md:text-tablet-h2 lg:text-[2.8rem] leading-tight tracking-tighter text-foreground/90 text-end">
-            It's the way to scream your brand name to world.
+            It's the way to scream your brand name to the world.
             </h2>
             </div>
           </div>
